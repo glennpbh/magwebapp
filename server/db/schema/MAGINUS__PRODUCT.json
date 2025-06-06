@@ -1,0 +1,2232 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "PRODUCT",
+    "comment": "Product details",
+    "columns": [
+      {
+        "name": "PRODUCT_CODE",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": false,
+        "comment": "Uniquely identifies a product",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "LONG_DESCRIPTION_1",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 80,
+        "nullable": true,
+        "comment": "Detailed description  (first line)",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "LONG_DESCRIPTION_2",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 80,
+        "nullable": true,
+        "comment": "Detailed description of a product (second line)",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "WITHDRAWN",
+        "position": 4,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "1 = Withdrawn from use, 0 = Not withdrawn",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "WITHDRAWN_DATE",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "The date the record was withdrawn from service",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STOCK_UNIT",
+        "position": 6,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": false,
+        "comment": "The normal transaction units for the product",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFAULT_PURCH_UNIT",
+        "position": 7,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Default unit used for purchasing - Relates to PRODUCT_UNIT",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFAULT_SALES_UNIT",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Default unit used for sales orders -Relates to PRODUCT_UNIT",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "HEIGHT",
+        "position": 9,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 6,
+        "scale": 2,
+        "nullable": true,
+        "comment": "height, held in centimetres of stock unit",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "WIDTH",
+        "position": 10,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 6,
+        "scale": 2,
+        "nullable": true,
+        "comment": "Width, held in centimetres of stock unit",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "LENGTH",
+        "position": 11,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 6,
+        "scale": 2,
+        "nullable": true,
+        "comment": "Length of a product, held in centimetres of stock unit",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "DIM_ENTRY_UNIT",
+        "position": 12,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Unit that dimensions were entered in: 0 mm, 1 Cm, 2 metre",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "VOLUME",
+        "position": 13,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Volume, held in cubic centimetres of stock unit",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "WEIGHT",
+        "position": 14,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 19,
+        "scale": 9,
+        "nullable": true,
+        "comment": "Weight of a product, held in kilos in weight entry unit",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "WEIGHT_ENTRY_UNIT",
+        "position": 15,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Unit that weight was entered in: 1 kilo, 0 gramme, 2 tonne",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PROCEDURE_CODE",
+        "position": 16,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Uniquely defines a quality procedure",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "REPLENISH_TYPE",
+        "position": 17,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=order point,1=forecast,2=manual",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "WARRANTY",
+        "position": 18,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 0,
+        "nullable": true,
+        "comment": "The warranty period for a product, in days.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRODUCT_SOLD",
+        "position": 19,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "1 = Product may be sold 0 = Product may not be sold",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRODUCT_PURCHASED",
+        "position": 20,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "1 = Product may be purchase 0 = Product may not be purchased",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRODUCT_STOCKED",
+        "position": 21,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "1 = Product may be stocked 0 = Product may not be stocked",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "KIT_PRODUCT",
+        "position": 22,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0 = Not a kit ; 1= part of a kit",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SERVICE_PRODUCT",
+        "position": 23,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0= non-service product, 1= service product",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SPECIAL_PRODUCT",
+        "position": 24,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0= Not a special product, 1= special product",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STORAGE_TYPE",
+        "position": 25,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Method of storing stock",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "BATCH_CONTROL",
+        "position": 26,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0 = not batch controlled; 1= batch control",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SERIAL_CONTROL",
+        "position": 27,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0=no serial control,1=serial control,2=serial cont. on issue",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STANDARD_COST",
+        "position": 28,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Standard cost of a product per stock unit",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "CREATION_DATE",
+        "position": 29,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Date on which the record was first created",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PICTURE",
+        "position": 30,
+        "data_type": "VARCHAR2",
+        "length": 80,
+        "nullable": true,
+        "comment": "Name of a file containing a picture",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "MANUAL_ALLOCATION",
+        "position": 31,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0 if manual allocation required; 1 if automatic allocation.",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 32,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 33,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STUGAD",
+        "position": 34,
+        "data_type": "VARCHAR2",
+        "length": 24,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "STANDARD_PRICE",
+        "position": 35,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "The standard selling price for a product per stock unit",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "PRICE_REVIEW_DATE",
+        "position": 36,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date price was last reviewed",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SUPPLIER_ACCOUNT",
+        "position": 37,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Uniquely identifies a supplier",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SAFETY_MARGIN",
+        "position": 38,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Allocation safety margin (days) (default to 0 )",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "VAT_CODE",
+        "position": 39,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "comment": "VAT code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "TECH_NOTES_NUMBER",
+        "position": 40,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Foreign key to TEXT_STORAGE table-relates to technical notes",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "LAST_USED",
+        "position": 41,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "The date the entity was last used",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY1",
+        "position": 42,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "1st product key - A means of categorising products",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY2",
+        "position": 43,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "2nd product key - A means of categorising products",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY3",
+        "position": 44,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "3rd product key - A means of categorising products",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY4",
+        "position": 45,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "4th product key - A means of categorising products",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY5",
+        "position": 46,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "5th product key - A means of categorising products",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY6",
+        "position": 47,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "6th product key - A means of categorising products",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "GROUP_COSTING",
+        "position": 48,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0 =exclude from group costing, 1= include in group costing",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SHIP_AND_DEBIT",
+        "position": 49,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0=not ship and debit,1=ship and debit",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "FIXED_PRICE",
+        "position": 50,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=default to not fixed but user may over ride 2=default to fixed but user may not over ride 3-default to not fixed user may not over ride 4=default to fixed user may not over ride",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRICE_SUPPORT",
+        "position": 51,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0=not price support, 1=price support item",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ROYALTY_PRODUCT",
+        "position": 52,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0=not a royalty product,1=royalty product",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRINT_KIT_DESPATCH",
+        "position": 53,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=components only,1=print kit also",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRINT_KIT_INVOICE",
+        "position": 54,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=Print ONLY the kit on the sales invoice, 1= 'Print the kit product AND components\n",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "TECHNICAL_DISCOUNT",
+        "position": 55,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 2,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "AUTO_SUBSTITUTION",
+        "position": 56,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0=cannot substitute 1=can substitut",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "TARIFF_CODE",
+        "position": 57,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key 7 - has a fixed name",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SPECIAL_TEXT",
+        "position": 58,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "text storage reference number for special text",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MAIN_PRODUCT",
+        "position": 59,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=not main product,1=main product -for item line association",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DEFINED_KEY_1",
+        "position": 60,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "User defined field can appear on stock or sales button of product maintenance\n",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_KEY_2",
+        "position": 61,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "User defined field can appear on stock or sales button of product maintenance\n",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_KEY_3",
+        "position": 62,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "User defined field can appear on stock or sales button of product maintenance\n",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_KEY_4",
+        "position": 63,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "User defined field can appear on stock or sales button of product maintenance\n",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_KEY_5",
+        "position": 64,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "User defined field can appear on stock or sales button of product maintenance\n",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_KEY_6",
+        "position": 65,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "User defined field can appear on stock or sales button of product maintenance\n",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "NO_RMA_ALLOWED",
+        "position": 66,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0=RMA allowed, 1= no RMA allowed",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DEFINED_ANALYSIS_1",
+        "position": 67,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "User defined product field",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_ANALYSIS_2",
+        "position": 68,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "User defined product field",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_ANALYSIS_3",
+        "position": 69,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "User defined product field",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_ANALYSIS_4",
+        "position": 70,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "User defined product field",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_ANALYSIS_5",
+        "position": 71,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "User defined product field",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_ANALYSIS_6",
+        "position": 72,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "User defined product field",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "MAX_QUANTITY",
+        "position": 73,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "comment": "Max order quantity in default sales units",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "REORDER_QUANTITY",
+        "position": 74,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "comment": "Re-order quantity in default sales units",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "MANUF_PRODUCT",
+        "position": 75,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "1=manufactured product, 0= not manufactured",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MANUF_LEAD_TIME",
+        "position": 76,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Manufacture lead time days",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MANUF_BUILD_TIME",
+        "position": 77,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Manufacture build time days",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "VARIABLE_PARTS_LIST",
+        "position": 78,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=parts list may vary, 0=parts list fixed",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "BUILD_TEXT",
+        "position": 79,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Text ref entry for build instructions for manufactured item",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MIN_MANUF_QTY",
+        "position": 80,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "comment": "Minimum build quantity - stock units",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "REBATE_VALUE",
+        "position": 81,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "GUARANTEED_PERCENTAGE",
+        "position": 82,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "comment": "Guaranteed percentage",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "MIN_SALES_QTY",
+        "position": 83,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "comment": "Minimum sales quantity - stock units",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "PACK_SIZE",
+        "position": 84,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "comment": "pack size",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "LINKED_SERVICE",
+        "position": 85,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "1=Item is linked to a service product,0=not linked",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "LINKED_SERVICE_PRODUCT",
+        "position": 86,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Product may be linked to a service product",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "AGREEMENT_TYPE",
+        "position": 87,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=no,1=margin enhancmnt,2=guarantee margin,3=guaratee mrkup",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "RECEIPT_TOLERANCE",
+        "position": 88,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 2,
+        "nullable": true,
+        "comment": "Allowable tolerance for receipt discrepancies",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "MAIN_PRICING_UNIT",
+        "position": 89,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": false,
+        "comment": "Unit code of the main pricing unit",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY7",
+        "position": 90,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY8",
+        "position": 91,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY9",
+        "position": 92,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY10",
+        "position": 93,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY11",
+        "position": 94,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY12",
+        "position": 95,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY13",
+        "position": 96,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY14",
+        "position": 97,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY15",
+        "position": 98,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY16",
+        "position": 99,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY17",
+        "position": 100,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY18",
+        "position": 101,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY19",
+        "position": 102,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY20",
+        "position": 103,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY21",
+        "position": 104,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY22",
+        "position": 105,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY23",
+        "position": 106,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY24",
+        "position": 107,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY25",
+        "position": 108,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_KEY26",
+        "position": 109,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product key",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "BATCH_AUTO_ENTRY",
+        "position": 110,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=automatically generate batch id  0=manually generate batch",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "COMBINATION_PRICING",
+        "position": 111,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=combination pricing applies 0=no combination pricing",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STANDARD_PACKAGE_SIZE",
+        "position": 112,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 4,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "CUSTOMS_CODE",
+        "position": 113,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Customs rate code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "EXCISE_CODE",
+        "position": 114,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Excise duty rate code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "STRENGTH_FACTOR",
+        "position": 115,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "strength factor for customs duty",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "A_PARAMETER",
+        "position": 116,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "part of customs duty calculation",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "B_PARAMETER",
+        "position": 117,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "part of customs duty calculation",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "INTERNAL_VOLUME",
+        "position": 118,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Internal volume",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "VOL_ENTRY_UNIT",
+        "position": 119,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=ml 1=cl 2=litres",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "BATCH_PUTAWAY",
+        "position": 120,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1= unique batch putaway control, 0 = non-unique batch putaway  ",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "BACK_ORDERS",
+        "position": 121,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=back orders allowed, 1=not allowed, 2=not allowed nut back to backs allowed, 3=take system default",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "OBSOLETE",
+        "position": 122,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=Obsolete product; 0=Not obsolete",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SUPERSEDED",
+        "position": 123,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=not superseded. 1 =superseded. 2= top of the supersession list.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STYLE_CODE",
+        "position": 124,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "style",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "COLOUR_CODE",
+        "position": 125,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Colour",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SIZE1_VALUE",
+        "position": 126,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "size",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SIZE2_VALUE",
+        "position": 127,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "size",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SIZE_SEQUENCE1",
+        "position": 128,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SIZE_SEQUENCE2",
+        "position": 129,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DESPATCH_TYPE",
+        "position": 130,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SHIP_DIRECT",
+        "position": 131,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SERVICE_SUB_TYPE",
+        "position": 132,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MESSAGE_TYPE",
+        "position": 133,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MESSAGE_START_DATE",
+        "position": 134,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MESSAGE_END_DATE",
+        "position": 135,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PO_MESSAGE",
+        "position": 136,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PO_MESSAGE_START_DATE",
+        "position": 137,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PO_MESSAGE_END_DATE",
+        "position": 138,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "USAGE_RECORD_TYPE",
+        "position": 139,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DISASSEMBLE",
+        "position": 140,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "FREE_FLOW",
+        "position": 141,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "COUNTRY_OF_ORIGIN",
+        "position": 142,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "AGE_RESTRICTED",
+        "position": 143,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_PRODUCT",
+        "type": "NORMAL",
+        "unique": true,
+        "columns": [
+          {
+            "name": "PRODUCT_CODE",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PRODUCT",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_PRODUCT_STYLE",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "STYLE_CODE",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PRODUCT",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_PRODUCT_SUPP",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "SUPPLIER_ACCOUNT",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "PRODUCT_CODE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PRODUCT",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "PRODUCT_MATERIAL_TYPE",
+        "type": "FUNCTION-BASED NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "SYS_NC00141$",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PRODUCT",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 143,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 4,
+      "primary_keys": 0,
+      "total_columns": 143,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:24.560412+01:00"
+}

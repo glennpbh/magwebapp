@@ -55,3 +55,4 @@ The script tag must include the `setup` attribute and use TypeScript.
 ## TypeScript Guidelines
 
 - Don't use `any` in TypeScript, use `unknown` instead
+- When capturing errors in TypeScript, call the error variable `err`

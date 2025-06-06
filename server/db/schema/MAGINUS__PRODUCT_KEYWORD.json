@@ -1,0 +1,104 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "PRODUCT_KEYWORD",
+    "comment": "Key words used within product descriptions",
+    "columns": [
+      {
+        "name": "KEYWORD",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 12,
+        "nullable": true,
+        "comment": "Uniquely identifies a key word within a description",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_CODE",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Uniquely identifies a product",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "STUGAD",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 1,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_PRODUCT_KEYWORD",
+        "type": "NORMAL",
+        "unique": true,
+        "columns": [
+          {
+            "name": "KEYWORD",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "PRODUCT_CODE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PRODUCT_KEYWORD",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_PRODUCT_KEYWORD_2A",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "PRODUCT_CODE",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PRODUCT_KEYWORD",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 3,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 2,
+      "primary_keys": 0,
+      "total_columns": 3,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:31.824856+01:00"
+}

@@ -38,11 +38,11 @@ export default defineEventHandler(async (event) => {
     const payload = jwtService.verifyToken(token)
     event.context.user = payload
 
-  } catch (error) {
-    if (error instanceof Error) {
+  } catch (err) {
+    if (err instanceof Error) {
       throw createError({
         statusCode: 401,
-        statusMessage: error.message
+        statusMessage: err.message
       })
     }
     

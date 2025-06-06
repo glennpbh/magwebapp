@@ -1,0 +1,113 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "PRODUCT_WAREHOUSE_PROMDATE",
+    "comment": "Used to display next promise date within sales order entry",
+    "columns": [
+      {
+        "name": "PRODUCT_CODE",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": false,
+        "comment": "Product Code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "WAREHOUSE_CODE",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "comment": "Warehouse code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PROMISED_DATE",
+        "position": 3,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Delivery promise date",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 4,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      }
+    ],
+    "primary_keys": [
+      {
+        "name": "I_PRODUCT_WH_PROMDATE",
+        "columns": [
+          "PRODUCT_CODE",
+          "WAREHOUSE_CODE"
+        ],
+        "table_name": "PRODUCT_WAREHOUSE_PROMDATE",
+        "schema_name": "MAGINUS"
+      }
+    ],
+    "foreign_keys": null,
+    "indexes": null
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 5,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 0,
+      "primary_keys": 1,
+      "total_columns": 5,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:41.293903+01:00"
+}

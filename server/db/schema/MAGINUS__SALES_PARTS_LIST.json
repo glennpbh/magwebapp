@@ -1,0 +1,204 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "SALES_PARTS_LIST",
+    "comment": "Components of a kit on a sales order",
+    "columns": [
+      {
+        "name": "SALES_DOCUMENT_NUM",
+        "position": 1,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Document number",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SALES_ITEM_NUM",
+        "position": 2,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Sales Order Item Number",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ORDER_TYPE",
+        "position": 3,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=Order; 1=Quote; 3=Works Order;  4=transfer 5=call off",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRODUCT_CODE",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Uniquely identifies a product",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PART_CODE",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Identifies a product which is part of the main product",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SALES_RQD_QUANTITY",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "comment": "Required quantity based in sales pricing units",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "PARENT_ASSEMBLY",
+        "position": 7,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ASSEMBLY_COUNT",
+        "position": 8,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": true,
+        "comment": "part of unique id for sub assembly",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRICE",
+        "position": 9,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Pro-rata component price",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "MARGIN",
+        "position": 10,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 2,
+        "nullable": true,
+        "comment": "Component margin in percentage",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_SALES_PARTS",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "SALES_DOCUMENT_NUM",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "SALES_ITEM_NUM",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_PARTS_LIST",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 10,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 1,
+      "primary_keys": 0,
+      "total_columns": 10,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:53.42408+01:00"
+}

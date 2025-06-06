@@ -1,0 +1,153 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "PRICE_MATRIX",
+    "comment": "Price list for a product group/customer group combination",
+    "columns": [
+      {
+        "name": "PRODUCT_GROUP",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Together with the system parameter class identifies a group",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CUSTOMER_GROUP",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "comment": "Together with the system parameter class identifies a group",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRICE_LIST",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "comment": "Unique identifier of a price list",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 4,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "STUGAD",
+        "position": 6,
+        "data_type": "VARCHAR2",
+        "length": 3,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "GUIDE_PRICE_LIST",
+        "position": 7,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Guide proice list code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_PRICE_MATRIX",
+        "type": "NORMAL",
+        "unique": true,
+        "columns": [
+          {
+            "name": "PRICE_LIST",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "CUSTOMER_GROUP",
+            "position": 2,
+            "order": "ASC"
+          },
+          {
+            "name": "PRODUCT_GROUP",
+            "position": 3,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PRICE_MATRIX",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 7,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 1,
+      "primary_keys": 0,
+      "total_columns": 7,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:18.789215+01:00"
+}

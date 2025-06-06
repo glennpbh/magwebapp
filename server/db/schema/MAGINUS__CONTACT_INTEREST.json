@@ -1,0 +1,174 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "CONTACT_INTEREST",
+    "comment": "Customer/Prospect area of interest",
+    "columns": [
+      {
+        "name": "PROSPECT_CUSTOMER",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": false,
+        "comment": "Prospect reference or customer account",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CONTACT_ID",
+        "position": 2,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Customer contact identified",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PROSPECT_CUST_TYPE",
+        "position": 3,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0=customer ; 1= prospect",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "INTEREST_CODE",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": false,
+        "comment": "product interest",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "COMMENT_TEXT",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 200,
+        "nullable": true,
+        "comment": "Free format text",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 7,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CONTACT_KEY",
+        "position": 8,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "unique contact identifier",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_CONTACT_INTEREST",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "PROSPECT_CUSTOMER",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "PROSPECT_CUST_TYPE",
+            "position": 2,
+            "order": "ASC"
+          },
+          {
+            "name": "CONTACT_ID",
+            "position": 3,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CONTACT_INTEREST",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 8,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 1,
+      "primary_keys": 0,
+      "total_columns": 8,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:57:44.157674+01:00"
+}

@@ -1,0 +1,168 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "PRODUCT_SUBSTITUTE",
+    "comment": "Product which may be used as an alternative.",
+    "columns": [
+      {
+        "name": "PRODUCT_CODE",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Uniquely identifies a product",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SUBSTITUTE_PRODUCT",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Product code which is an alternative to the required product",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SEQUENCE_NUM",
+        "position": 3,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 8,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Order of choice for substitutes (1=first choice)\n",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STUGAD",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 3,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SALES_SUBSTITUTE",
+        "position": 7,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=product may be substituted in sales order entry, 0=product may not be substituted in SOE\n",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STOCK_SUBSTITUTE",
+        "position": 8,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=product may be substituted by allocation, 0=product may not be substituted by allocation\n",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_PRODUCT_SUBS",
+        "type": "NORMAL",
+        "unique": true,
+        "columns": [
+          {
+            "name": "PRODUCT_CODE",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "SUBSTITUTE_PRODUCT",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PRODUCT_SUBSTITUTE",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 8,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 1,
+      "primary_keys": 0,
+      "total_columns": 8,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:35.890883+01:00"
+}

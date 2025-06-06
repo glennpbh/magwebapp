@@ -1,0 +1,692 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "PO_HEADER",
+    "comment": "Purchase order header details",
+    "columns": [
+      {
+        "name": "ORDER_NUMBER",
+        "position": 1,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Unique identifier of a purchase order",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "WAREHOUSE_CODE",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Unique identifier of a warehouse",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SUPPLIER_ACCOUNT",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Uniquely identifies a supplier",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "REFERENCE",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "User defined reference.",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "BUYER_ID",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "Unique identifier of a buyer",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ORDER_DATE",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date of an order",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ORDER_TYPE",
+        "position": 7,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=standard; 1=blanket; 2=back to back",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STATUS",
+        "position": 8,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=Unauthorised, 1=Authorised, 2=Cancelled, 3=Complete",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ORDER_VALUE",
+        "position": 9,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Total order value",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "CONTACT_NAME",
+        "position": 10,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Name of a customer/supplier contact",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "TEXT_NUMBER",
+        "position": 11,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Unique identifier of a text storage record.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SALES_DOCUMENT_NUM",
+        "position": 12,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Document number",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ORDER_METHOD",
+        "position": 13,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Method of sending an order ie 1=fax,2=EDI,3=paper, 4=e-mail",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "FAX",
+        "position": 14,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "FAX number",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SEND_REQUIRED",
+        "position": 15,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0 = Send document, 1 = Do not send document",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRINT_NUMBER",
+        "position": 16,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 2,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Number of times order has been printed",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRINT_COUNT",
+        "position": 17,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 2,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Number of copies printed",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 18,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 19,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRINT_DATE",
+        "position": 20,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Last print date",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CURRENCY_CODE",
+        "position": 21,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Currency code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PAYMENT_TERM",
+        "position": 22,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Unique identifier for a payment term",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CONFIRMED_DATE",
+        "position": 23,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Order confirmation date",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SALES_ORDER_LINK",
+        "position": 24,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Associated sales order number",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "BASE_ORDER_VALUE",
+        "position": 25,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Order value in base currency",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "EXCHANGE_RATE",
+        "position": 26,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 6,
+        "nullable": true,
+        "comment": "An exchange rate",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "ORDER_WEIGHT",
+        "position": 27,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Total order weight",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "DISCOUNT_PERC",
+        "position": 28,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 12,
+        "scale": 6,
+        "nullable": true,
+        "comment": "Percentage discount.",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "LINKED_PO",
+        "position": 29,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": true,
+        "comment": "linked purchase order number",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DELIVER_TO",
+        "position": 30,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Supplier account to which goods are to be delivered. Null if delivering to warehouse",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DELIVERY_CONTACT",
+        "position": 31,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Delivery contact name",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CARRIER_CODE",
+        "position": 32,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Unique id of a carrier",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "AGENT",
+        "position": 33,
+        "data_type": "VARCHAR2",
+        "length": 15,
+        "nullable": true,
+        "comment": "Agent",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "EMAIL",
+        "position": 34,
+        "data_type": "VARCHAR2",
+        "length": 256,
+        "nullable": true,
+        "comment": "E-mail address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "UNAUTHORISE_REASON",
+        "position": 35,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=value, 2=supplier, 3=Value/Supplier, 0=authorised",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CAMPAIGN_CODE",
+        "position": 36,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ISSUE_TYPE",
+        "position": 37,
+        "data_type": "VARCHAR2",
+        "length": 4,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ROUTE_ID",
+        "position": 38,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 6,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "INTERFACE_STATUS",
+        "position": 39,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0\n",
+        "comment": "0=not interfaced, 1=interfaced, 2=in progress",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "WEB_STATUS",
+        "position": 40,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_PO_HEADER",
+        "type": "NORMAL",
+        "unique": true,
+        "columns": [
+          {
+            "name": "ORDER_NUMBER",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PO_HEADER",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_PO_HEADER_2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "SUPPLIER_ACCOUNT",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PO_HEADER",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_PO_HEADER_3",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "REFERENCE",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PO_HEADER",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_PO_HEADER_5",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "SALES_DOCUMENT_NUM",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PO_HEADER",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 40,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 4,
+      "primary_keys": 0,
+      "total_columns": 40,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:17.424143+01:00"
+}

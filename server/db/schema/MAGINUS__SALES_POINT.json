@@ -1,0 +1,678 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "SALES_POINT",
+    "comment": "Sales office",
+    "columns": [
+      {
+        "name": "SALES_OFFICE",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "comment": "Unique identifier of a sales office",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "OFFICE_NAME",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": false,
+        "comment": "Sales office name",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CREDIT_CONTROLLER",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Name of the individual responsible for credit control",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ADDRESS1",
+        "position": 6,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "First line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS2",
+        "position": 7,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Second line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS3",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "third line of an address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS4",
+        "position": 9,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "fourth line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS5",
+        "position": 10,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Fifth line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS6",
+        "position": 11,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Sixth line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRIME_ADDRESS_LINE",
+        "position": 12,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Primary address line number for outputting onto reports",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STUGAD",
+        "position": 13,
+        "data_type": "VARCHAR2",
+        "length": 9,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "TELEPHONE",
+        "position": 14,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "Telephone Number",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "FAX",
+        "position": 15,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "FAX number",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "TELEX",
+        "position": 16,
+        "data_type": "VARCHAR2",
+        "length": 17,
+        "nullable": true,
+        "comment": "Redundant field - do not use",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POSTCODE",
+        "position": 17,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Postcode",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFAULT_PRICE_LIST",
+        "position": 18,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Default price list for a sales office -Relates to PRICE_LIST",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "TEXT_NUMBER",
+        "position": 19,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Unique identifier of a text storage record.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "GUIDE_PRICE_LIST",
+        "position": 20,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Price list",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SALES_DIVISION",
+        "position": 21,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "A division used to group sales offices",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "COUNTRY_CODE",
+        "position": 22,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Unique identifier of a country",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DESCRIPTION",
+        "position": 23,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Description",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "TRADE_COUNTER",
+        "position": 24,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=trade counter  0=non-trade counter",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "WITHDRAWN",
+        "position": 25,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1 = Withdrawn from use, 0 = Not withdrawn",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "WITHDRAWN_DATE",
+        "position": 26,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "The date the record was withdrawn from service",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ISSUE_TYPE",
+        "position": 27,
+        "data_type": "VARCHAR2",
+        "length": 4,
+        "nullable": true,
+        "comment": "Movement type used to issue the item of stock from stores.",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "WELCOME_PACK_PRODUCT",
+        "position": 28,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Product code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "WELCOME_ACTION",
+        "position": 29,
+        "data_type": "VARCHAR2",
+        "length": 12,
+        "nullable": true,
+        "comment": "Contact action",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "REMINDER_PACK_PRODUCT",
+        "position": 30,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "product code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "REMINDER_ACTION",
+        "position": 31,
+        "data_type": "VARCHAR2",
+        "length": 12,
+        "nullable": true,
+        "comment": "Contact action",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "REMINDER_PERIOD",
+        "position": 32,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 5,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Number of days until reminder action invoked",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "INTERNET_OFFICE",
+        "position": 33,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=internat office",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "EMAIL",
+        "position": 34,
+        "data_type": "VARCHAR2",
+        "length": 256,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "IP_ADDRESS",
+        "position": 35,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "INVOICE_CONSOLIDATION",
+        "position": 36,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SALES_MIN_MARGIN",
+        "position": 37,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 5,
+        "scale": 2,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "MULTI_SHIPMENT_DAYS",
+        "position": 38,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "WELCOME_PACK_OPTION",
+        "position": 39,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ADVERTISING_PACK_PRODUCT",
+        "position": 40,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADVERTISING_PACK_ACTION",
+        "position": 41,
+        "data_type": "VARCHAR2",
+        "length": 12,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADVERTISING_PACK_PERIOD",
+        "position": 42,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 5,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ADVERTISING_PACK_OPTION",
+        "position": 43,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SUPPRESS_ORDER_REF",
+        "position": 44,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_SALES_POINT",
+        "type": "NORMAL",
+        "unique": true,
+        "columns": [
+          {
+            "name": "SALES_OFFICE",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_POINT",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 44,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 1,
+      "primary_keys": 0,
+      "total_columns": 44,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:55.902714+01:00"
+}

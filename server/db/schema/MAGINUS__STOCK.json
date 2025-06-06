@@ -1,0 +1,581 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "STOCK",
+    "comment": "Stores the level of stock in a physical location",
+    "columns": [
+      {
+        "name": "PRODUCT_CODE",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": false,
+        "comment": "Uniquely identifies a product",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "WAREHOUSE_CODE",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "comment": "Unique identifier of a warehouse",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "LOCATION_CODE",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Unique identifier for a location within a warehouse",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "STOCK_STATUS",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Uniquely identifies a stock status",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "BATCH_ID",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 15,
+        "nullable": true,
+        "comment": "Uniquely identifies a batch",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SERIAL_NUM",
+        "position": 6,
+        "data_type": "VARCHAR2",
+        "length": 60,
+        "nullable": true,
+        "comment": "uniquely identifies a serial record within a product",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "UNIT_COST",
+        "position": 7,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Cost of a single unit of stock",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "QUANTITY",
+        "position": 8,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 19,
+        "scale": 9,
+        "nullable": false,
+        "comment": "Quantity in unit of document if available else in stock unit",
+        "type_mappings": {
+          "csharp": "decimal",
+          "typescript": "number",
+          "golang": "float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "FIFO_DATE",
+        "position": 9,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date used for FIFO costing purposes",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SOURCE_OF_SUPPLY",
+        "position": 10,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "GRN, RMA num/item or stock movement depending on supply_type",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 11,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 12,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "STUGAD",
+        "position": 13,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SUPPLY_TYPE",
+        "position": 14,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=GRN number;1=RMA number;2=Stock movement;3=customer spec;4=manufactured",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SALES_DOCUMENT_NUM",
+        "position": 15,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Document number",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ORDER_TYPE",
+        "position": 16,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=Order; 1=Quote; 3=Works Order;  4=transfer 5=call off",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SALES_ITEM_NUM",
+        "position": 17,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Sales Order Item Number",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PICK_LIST_NUM",
+        "position": 18,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Picking list number - uniquely identifies a picking list",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "REQUIRED_DATE",
+        "position": 19,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "The date the goods are required by.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PICK_TIME",
+        "position": 20,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 16,
+        "scale": 6,
+        "nullable": true,
+        "comment": "The date and time the item was picked.",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "INCLUDED_CHARGES",
+        "position": 21,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "1=Charges included,0=charges not included",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "REVALUATION_DATE",
+        "position": 22,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date stock was last revalued",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DUTY_PAID",
+        "position": 23,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=Bonded stock  1=Duty paid stock",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "BULK_CONVERSION",
+        "position": 24,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "comment": "Number of stock units in bulk unit (may differ from standard conversion rate) - eg bottles per case",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "CUSTOMER_ACCOUNT",
+        "position": 25,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Unique identifier of a customer",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "INVOICE_NUMBER",
+        "position": 26,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Invoice register number",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "HANDLING_ID",
+        "position": 27,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STOCK_SUBSTATUS",
+        "position": 28,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "HANDLING_ID_SIZE",
+        "position": 29,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_STOCK",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "WAREHOUSE_CODE",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "PRODUCT_CODE",
+            "position": 2,
+            "order": "ASC"
+          },
+          {
+            "name": "FIFO_DATE",
+            "position": 3,
+            "order": "ASC"
+          },
+          {
+            "name": "BATCH_ID",
+            "position": 4,
+            "order": "ASC"
+          },
+          {
+            "name": "SERIAL_NUM",
+            "position": 5,
+            "order": "ASC"
+          },
+          {
+            "name": "LOCATION_CODE",
+            "position": 6,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "STOCK",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_STOCK_2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "PICK_LIST_NUM",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "PICK_TIME",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "STOCK",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_STOCK_3",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "PICK_TIME",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "PICK_LIST_NUM",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "STOCK",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_STOCK_4",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "SOURCE_OF_SUPPLY",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "PRODUCT_CODE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "STOCK",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_STOCK_ST",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "STOCK_STATUS",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "PRODUCT_CODE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "STOCK",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 29,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 5,
+      "primary_keys": 0,
+      "total_columns": 29,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:59:00.782945+01:00"
+}

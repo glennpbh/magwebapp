@@ -1,0 +1,79 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "PRODUCT_VAT",
+    "comment": "VAT code applied to product for a given country",
+    "columns": [
+      {
+        "name": "PRODUCT_CODE",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "COUNTRY_CODE",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "VAT_CODE",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      }
+    ],
+    "primary_keys": [
+      {
+        "name": "I_PRODUCT_VAT",
+        "columns": [
+          "PRODUCT_CODE",
+          "COUNTRY_CODE",
+          "VAT_CODE"
+        ],
+        "table_name": "PRODUCT_VAT",
+        "schema_name": "MAGINUS"
+      }
+    ],
+    "foreign_keys": null,
+    "indexes": null
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 3,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 0,
+      "primary_keys": 1,
+      "total_columns": 3,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:40.536779+01:00"
+}

@@ -1,0 +1,244 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "SALES_ADDRESS",
+    "columns": [
+      {
+        "name": "SALES_DOCUMENT_NUM",
+        "position": 1,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ORDER_TYPE",
+        "position": 2,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SALES_ADDRESS_NUM",
+        "position": 3,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "COUNTRY_CODE",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS1",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS2",
+        "position": 6,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS3",
+        "position": 7,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS4",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS5",
+        "position": 9,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS6",
+        "position": 10,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POSTCODE",
+        "position": 11,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DELIVERY_TEXT_NUM",
+        "position": 12,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 13,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 14,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DELIVERY_NAME",
+        "position": 15,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      }
+    ],
+    "primary_keys": [
+      {
+        "name": "I_SALES_ADDRESS_PK",
+        "columns": [
+          "SALES_DOCUMENT_NUM",
+          "SALES_ADDRESS_NUM",
+          "ORDER_TYPE"
+        ],
+        "table_name": "SALES_ADDRESS",
+        "schema_name": "MAGINUS"
+      }
+    ],
+    "foreign_keys": null,
+    "indexes": null
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 15,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 0,
+      "primary_keys": 1,
+      "total_columns": 15,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:43.099639+01:00"
+}

@@ -1,0 +1,292 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "CHARGE_CODE",
+    "comment": "Charge categories",
+    "columns": [
+      {
+        "name": "SALES_PURCHASE",
+        "position": 1,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0=Sales charge, 1= Purchase charge, 2=Sales discounts",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHARGE_CODE",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "comment": "Charge code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DESCRIPTION",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Description",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFAULT_VALUE",
+        "position": 4,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Value of default charge",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "DEFAULT_PERCENT",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 2,
+        "nullable": true,
+        "comment": "Default percent charged",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "FIXED_CHARGE",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0= not fixed, 1= fixed",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "FIXED_DESCRIPTION",
+        "position": 7,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0 = not fixed, 1= fixed",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 9,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STUGAD",
+        "position": 10,
+        "data_type": "VARCHAR2",
+        "length": 5,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "STATUS",
+        "position": 11,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=Active, 1=Not for use in Sales Order Entry or Despatch,2=Withdrawn",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "AMORTISE",
+        "position": 12,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=do not amortise; 1=by weight; 2= by volume; 3= by value",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "VAT_CODE",
+        "position": 13,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "VAT code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SUPPLIER_RELATED",
+        "position": 14,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=supplier related, 0 = not supplier related",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "THRESHOLD_VALUE",
+        "position": 15,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "BANDED_CHARGE_TYPE",
+        "position": 16,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_CHARGE_CODE",
+        "type": "NORMAL",
+        "unique": true,
+        "columns": [
+          {
+            "name": "CHARGE_CODE",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "SALES_PURCHASE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CHARGE_CODE",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 16,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 1,
+      "primary_keys": 0,
+      "total_columns": 16,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:57:44.345571+01:00"
+}

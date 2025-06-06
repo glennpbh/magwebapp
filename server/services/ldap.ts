@@ -3,6 +3,12 @@ import ldap from 'ldapjs'
 export interface LdapUser {
   email: string
   displayName: string
+  name: string
+  title: string
+  company: string
+  department: string
+  description: string
+  principalName: string
   memberOf: string[]
 }
 
@@ -11,8 +17,8 @@ export interface LdapConfig {
   baseDn: string
   userSearchBase: string
   groupSearchBase: string
-  bindDn?: string
-  bindPassword?: string
+  searchUserUpn: string
+  searchUserPassword: string
 }
 
 export class LdapService {
@@ -24,15 +30,28 @@ export class LdapService {
 
   private parseConfigs(): LdapConfig[] {
     const ldapServers = process.env.LDAP_SERVERS
-    if (!ldapServers) {
-      throw new Error('LDAP_SERVERS environment variable is required')
+    const ldapPort = process.env.LDAP_PORT || '389'
+    const baseDn = process.env.LDAP_BASE_DN
+    const userSearchBase = process.env.LDAP_USER_SEARCH_BASE
+    const groupSearchBase = process.env.LDAP_GROUP_SEARCH_BASE
+    const searchUserUpn = process.env.LDAP_SEARCH_USER_UPN
+    const searchUserPassword = process.env.LDAP_SEARCH_USER_PASSWORD
+
+    if (!ldapServers || !baseDn || !userSearchBase || !groupSearchBase || !searchUserUpn || !searchUserPassword) {
+      throw new Error('LDAP_SERVERS, LDAP_BASE_DN, LDAP_USER_SEARCH_BASE, LDAP_GROUP_SEARCH_BASE, LDAP_SEARCH_USER_UPN, and LDAP_SEARCH_USER_PASSWORD environment variables are required')
     }
 
-    try {
-      return JSON.parse(ldapServers) as LdapConfig[]
-    } catch (error) {
-      throw new Error('Invalid LDAP_SERVERS configuration format')
-    }
+    const servers = ldapServers.split(',').map(server => server.trim())
+    const protocol = ldapPort === '636' ? 'ldaps' : 'ldap'
+    
+    return servers.map(server => ({
+      url: `${protocol}://${server}:${ldapPort}`,
+      baseDn,
+      userSearchBase,
+      groupSearchBase,
+      searchUserUpn,
+      searchUserPassword
+    }))
   }
 
   async authenticate(email: string, password: string): Promise<LdapUser | null> {
@@ -42,8 +61,8 @@ export class LdapService {
         if (user) {
           return user
         }
-      } catch (error) {
-        console.error(`LDAP authentication failed for server ${config.url}:`, error)
+      } catch (err) {
+        console.error(`LDAP authentication failed for server ${config.url}:`, err)
         continue
       }
     }
@@ -59,49 +78,75 @@ export class LdapService {
       const client = ldap.createClient({
         url: config.url,
         timeout: 5000,
-        connectTimeout: 5000
+        connectTimeout: 5000,
+        tlsOptions: {
+          rejectUnauthorized: false // Allow self-signed certificates
+        }
       })
 
-      client.on('error', (error) => {
+      client.on('error', (err) => {
         client.destroy()
-        reject(error)
+        reject(err)
       })
 
-      const userDn = `cn=${email},${config.userSearchBase},${config.baseDn}`
-
-      client.bind(userDn, password, (bindError) => {
+      // Step 1: Authenticate user with their UPN/email and password
+      client.bind(email, password, (bindError) => {
         if (bindError) {
           client.destroy()
           reject(bindError)
           return
         }
 
-        this.getUserDetails(client, config, email)
-          .then((user) => {
+        console.log(`User credentials bind successful for ${email}`)
+
+        // Step 2: Rebind with search user to get detailed user information
+        client.bind(config.searchUserUpn, config.searchUserPassword, (searchBindError) => {
+          if (searchBindError) {
             client.destroy()
-            resolve(user)
-          })
-          .catch((error) => {
-            client.destroy()
-            reject(error)
-          })
+            reject(searchBindError)
+            return
+          }
+
+          console.log('Search user bind successful')
+
+          // Step 3: Search for user details using their UPN
+          this.getUserDetailsByUpn(client, config, email)
+            .then((user) => {
+              client.destroy()
+              resolve(user)
+            })
+            .catch((err) => {
+              client.destroy()
+              reject(err)
+            })
+        })
       })
     })
   }
 
-  private async getUserDetails(
+  private async getUserDetailsByUpn(
     client: ldap.Client, 
     config: LdapConfig, 
-    email: string
+    upn: string
   ): Promise<LdapUser> {
     return new Promise((resolve, reject) => {
       const searchBase = `${config.userSearchBase},${config.baseDn}`
-      const searchFilter = `(mail=${email})`
+      const searchFilter = `(userPrincipalName=${upn})`
       
       const searchOptions: ldap.SearchOptions = {
         scope: 'sub',
         filter: searchFilter,
-        attributes: ['displayName', 'mail', 'memberOf']
+        attributes: [
+          'company',
+          'department', 
+          'description',
+          'displayName',
+          'mail',
+          'memberOf',
+          'name',
+          'title',
+          'userPrincipalName'
+        ]
       }
 
       client.search(searchBase, searchOptions, (searchError, searchResult) => {
@@ -117,19 +162,25 @@ export class LdapService {
           userFound = true
           const attributes = entry.pojo.attributes
 
-          user.email = this.getAttributeValue(attributes, 'mail') || email
-          user.displayName = this.getAttributeValue(attributes, 'displayName') || email
+          user.email = this.getAttributeValue(attributes, 'mail') || upn
+          user.displayName = this.getAttributeValue(attributes, 'displayName') || ''
+          user.name = this.getAttributeValue(attributes, 'name') || ''
+          user.title = this.getAttributeValue(attributes, 'title') || ''
+          user.company = this.getAttributeValue(attributes, 'company') || ''
+          user.department = this.getAttributeValue(attributes, 'department') || ''
+          user.description = this.getAttributeValue(attributes, 'description') || ''
+          user.principalName = this.getAttributeValue(attributes, 'userPrincipalName') || upn
           
           const memberOf = this.getAttributeValues(attributes, 'memberOf')
           user.memberOf = memberOf.map(dn => this.extractGroupName(dn))
         })
 
-        searchResult.on('error', (error) => {
-          reject(error)
+        searchResult.on('error', (err) => {
+          reject(err)
         })
 
         searchResult.on('end', () => {
-          if (userFound && user.email && user.displayName && user.memberOf) {
+          if (userFound && user.email && user.displayName && user.memberOf !== undefined) {
             resolve(user as LdapUser)
           } else {
             reject(new Error('User not found or incomplete user data'))

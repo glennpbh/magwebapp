@@ -58,8 +58,8 @@ export default defineEventHandler(async (event): Promise<LoginResponse> => {
         groups: user.memberOf
       }
     }
-  } catch (error) {
-    console.error('Login error:', error)
+  } catch (err) {
+    console.error('Login error:', err)
     
     return {
       success: false,

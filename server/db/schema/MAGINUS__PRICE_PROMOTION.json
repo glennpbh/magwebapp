@@ -1,0 +1,490 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "PRICE_PROMOTION",
+    "comment": "Price list promotions",
+    "columns": [
+      {
+        "name": "PRICE_LIST",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "comment": " Unique identifier of a price list",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PROMOTION_CODE",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "comment": "Unique code within this price list by which the promotion is identified.",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DESCRIPTION",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": " The description of a code or, text regarding a record.",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PROMOTION_TYPE",
+        "position": 4,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0 \u0016 Order level promotion; 1= 1 \u0016 Product level promotion",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "START_DATE",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": " The starting date/time",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "END_DATE",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": " End of range/time",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "QUALIFYING_QUANTITY",
+        "position": 7,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "For a product level promotion; the number of items that have to be purchased from the qualifying list of products in order to receive something out of the promotional list of products.",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "PROMOTION_QUANTITY",
+        "position": 8,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Promotion quantity",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "TEXT_NUMBER",
+        "position": 9,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": " Unique identifier of a text storage record.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 10,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "comment": " The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 11,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "WITHDRAWN",
+        "position": 12,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": " 1 = Withdrawn from use, 0 = Not withdrawn",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "WITHDRAWN_DATE",
+        "position": 13,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": " The date the record was withdrawn from service",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "VALUE_THRESHOLD",
+        "position": 14,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Order value threshold. ",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "TOLERANCE",
+        "position": 15,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "The tolerance percentage. ",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "OPTIONAL",
+        "position": 16,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Specifies whether this is an optional order promotion. 1- Optional; 0 \u0016 Mandatory (default).",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHARGE_CODE",
+        "position": 17,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": " Charge code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DESPATCH_TYPE",
+        "position": 18,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": " Uniquely identifies a despatch type",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHARGE",
+        "position": 19,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": " Charge to be made",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "DEFINED_KEY1",
+        "position": 20,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": " 1st prospect key - a means of categorising prospects",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_KEY2",
+        "position": 21,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": " 2nd prospect key - a means of categorising prospects",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_KEY3",
+        "position": 22,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": " 3rd prospect key - a means of categorising prospects",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_KEY4",
+        "position": 23,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": " 4th prospect key - a means of categorising prospects",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_KEY5",
+        "position": 24,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Fifth defined field ",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFINED_KEY6",
+        "position": 25,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Sixth defined field ",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "TOTAL_PRICE",
+        "position": 26,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "The total price of a product level promotion.",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "TOTAL_EARNED",
+        "position": 27,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "The total bonus points earned on a product level promotion.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "TOTAL_REDEEMED",
+        "position": 28,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "The total bonus points redeemed on a product level promotion.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "EXEMPT",
+        "position": 29,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "1=exempt 0=not exempt",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_PRICE_PROMOTION",
+        "type": "NORMAL",
+        "unique": true,
+        "columns": [
+          {
+            "name": "PRICE_LIST",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "PROMOTION_CODE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PRICE_PROMOTION",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 29,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 1,
+      "primary_keys": 0,
+      "total_columns": 29,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:21.580358+01:00"
+}

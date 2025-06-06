@@ -1,0 +1,443 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "PRODUCT_UNIT",
+    "comment": "Units in which stock transactions may occur",
+    "columns": [
+      {
+        "name": "UNIT_CODE",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": false,
+        "comment": "Uniquely identifies a unit (Pricing Unit)",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_CODE",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": false,
+        "comment": "Uniquely identifies a product",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DESCRIPTION",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": false,
+        "comment": "Description",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CONVERSION",
+        "position": 4,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 16,
+        "scale": 9,
+        "nullable": false,
+        "default_value": "1 ",
+        "comment": "Number of stock units",
+        "type_mappings": {
+          "csharp": "decimal",
+          "typescript": "number",
+          "golang": "float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "SELLING_UNIT",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "1 ",
+        "comment": "Indicates whether a unit applies to sales",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PURCHASE_UNIT",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "1 ",
+        "comment": "Unit of purchase order",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STOCKING_UNIT",
+        "position": 7,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "1 ",
+        "comment": "Indicates whether a unit may be applied to stock movements",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STUGAD",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 9,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 10,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRECISION",
+        "position": 11,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 16,
+        "scale": 9,
+        "nullable": true,
+        "default_value": "1",
+        "comment": "The level of precision required",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "WITHDRAWN_DATE",
+        "position": 12,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "The date the record was withdrawn from service",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "WITHDRAWN",
+        "position": 13,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "0 ",
+        "comment": "1 = Withdrawn from use, 0 = Not withdrawn",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "EQUIVALENT_UNIT",
+        "position": 14,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": false,
+        "comment": "Unit code used to convert between one unit and another",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "EQUIVALENT_QUANTITY",
+        "position": 15,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 16,
+        "scale": 6,
+        "nullable": false,
+        "default_value": "1 ",
+        "comment": "Number of equivelent units required to make up unit",
+        "type_mappings": {
+          "csharp": "decimal",
+          "typescript": "number",
+          "golang": "float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "WEIGHT_UNIT",
+        "position": 16,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "1 ",
+        "comment": "1=weight specified in this unit,0=not the weight unit",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SALE_PRICE_UNIT",
+        "position": 17,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "1 ",
+        "comment": "1=sales pricing unit,0=not sales pricing unit",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PURCHASE_PRICE_UNIT",
+        "position": 18,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "1 ",
+        "comment": "1=purchase pricing unit,0=not purchase pricing unit",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "BULK_UNIT",
+        "position": 19,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "0 ",
+        "comment": "0=Not a bulk unit  1= bulk unit",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MIN_SALES_QTY",
+        "position": 20,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "default_value": "0",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "MAX_QUANTITY",
+        "position": 21,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "default_value": "0",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "MULTIPLE_QUANTITY",
+        "position": 22,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "default_value": "0",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "HANDLING_UNIT",
+        "position": 23,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "HANDLING_ID_SIZE",
+        "position": 24,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "INNER_UNIT",
+        "position": 25,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_PRODUCT_UNIT",
+        "type": "NORMAL",
+        "unique": true,
+        "columns": [
+          {
+            "name": "PRODUCT_CODE",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "UNIT_CODE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PRODUCT_UNIT",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 25,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 1,
+      "primary_keys": 0,
+      "total_columns": 25,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:39.817845+01:00"
+}

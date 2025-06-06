@@ -1,0 +1,548 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "CONTACT_HISTORY",
+    "comment": "Record of all contacts with customers/prospects",
+    "columns": [
+      {
+        "name": "PROSPECT_CUST_TYPE",
+        "position": 1,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0=customer ; 1= prospect",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PROSPECT_CUSTOMER",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": false,
+        "comment": "Prospect reference or customer account",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CONTACT_ID",
+        "position": 3,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Identifies a contact within a customer.  This ID is only unique within a customer.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CONTACT_NAME",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Name of a customer/supplier contact",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CONTACT_DATE",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date/time of contact",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CONTACT_ACTION",
+        "position": 6,
+        "data_type": "VARCHAR2",
+        "length": 12,
+        "nullable": true,
+        "comment": "Types of contact eg phonecall, fax etc.",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "USERNAME",
+        "position": 7,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "Uniquely identifies a Maginus user",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CONTACT_TEXT",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 200,
+        "nullable": true,
+        "comment": "Free text",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "NEXT_CONTACT_ACTION",
+        "position": 9,
+        "data_type": "VARCHAR2",
+        "length": 12,
+        "nullable": true,
+        "comment": "contact action",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "NEXT_CONTACT_DATE",
+        "position": 10,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "date of next contact",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "NEXT_USERNAME",
+        "position": 11,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "Contact at our end",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 12,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 13,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SALES_DOCUMENT_NUM",
+        "position": 14,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Document number",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DOCUMENT_TYPE",
+        "position": 15,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=Sales order/quote, 2=Credit Note, 3=RMA, 4=Fax job",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DOCUMENT_NUMBER",
+        "position": 16,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "GRN number; Despatch number or RMA number -see movement_type",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CONTACT_TEXT_NUM",
+        "position": 17,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "text reference to text_storage table",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CONTACT_REFERENCE",
+        "position": 18,
+        "data_type": "VARCHAR2",
+        "length": 12,
+        "nullable": true,
+        "comment": "Shows origins for reference",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CONTACT_HIST_KEY",
+        "position": 19,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "System generated identifier for a contact history entry",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "FOLLOW_UP_HIST_KEY",
+        "position": 20,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Allows several contact history entries to be linked.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CAMPAIGN_CODE",
+        "position": 21,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Campaign code to which media is attached (formerly known as prospect_source)",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "MEDIA_CODE",
+        "position": 22,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Media code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CONTACT_TYPE",
+        "position": 23,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STATUS",
+        "position": 24,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=Open, 1=Followed Up, 9=Marked for deletion",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ATTACHMENT",
+        "position": 25,
+        "data_type": "VARCHAR2",
+        "length": 255,
+        "nullable": true,
+        "comment": "file name",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CONTACT_KEY",
+        "position": 26,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Unique system generated contact identifier.  This identifier is unique across all customer accounts.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRINT_COUNT",
+        "position": 27,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 2,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MERGE_ACCOUNT",
+        "position": 28,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_CONTACT_HISTORY",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "PROSPECT_CUSTOMER",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CONTACT_HISTORY",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_CONTACT_HISTORY_2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "PROSPECT_CUSTOMER",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "CONTACT_DATE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CONTACT_HISTORY",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_CONTACT_HISTORY_3",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "DOCUMENT_NUMBER",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "DOCUMENT_TYPE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CONTACT_HISTORY",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_CONTACT_HISTORY_4",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "FOLLOW_UP_HIST_KEY",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CONTACT_HISTORY",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_CONTACT_HISTORY_ACTION",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "CONTACT_ACTION",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "CONTACT_DATE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CONTACT_HISTORY",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_CONTACT_HIST_KEY",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "CONTACT_HIST_KEY",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CONTACT_HISTORY",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 28,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 6,
+      "primary_keys": 0,
+      "total_columns": 28,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:57:44.356405+01:00"
+}

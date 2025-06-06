@@ -1,0 +1,1154 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "SALES_PAYMENT",
+    "comment": "Cash payment information - data held in encrypted form.",
+    "columns": [
+      {
+        "name": "SALES_DOCUMENT_NUM",
+        "position": 1,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Document number",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SO_INVOICE_NUM",
+        "position": 2,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Uniquely identifies a Sales Order Invoice",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PAYMENT_METHOD",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "comment": "0=credit card, 1=devit card, 2=manual, 3=cheque, 4=leasing",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CARD_NUMBER",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Credit card number etc.",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "EXPIRY_DATE",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 4,
+        "nullable": true,
+        "comment": "Batches and Quotations are valid until the expiry date.",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ISSUE_NUMBER",
+        "position": 6,
+        "data_type": "VARCHAR2",
+        "length": 2,
+        "nullable": true,
+        "comment": "Issue number, for Switch",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ISSUE_BANK",
+        "position": 7,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Name of the bank issuing card",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CARDHOLDER",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "name of card holder",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS1",
+        "position": 9,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "First line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS2",
+        "position": 10,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Second line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS3",
+        "position": 11,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "third line of an address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS4",
+        "position": 12,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "fourth line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS5",
+        "position": 13,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Fifth line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS6",
+        "position": 14,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Sixth line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POSTCODE",
+        "position": 15,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Postcode",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "COUNTRY_CODE",
+        "position": 16,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Unique identifier of a country",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PAYMENT_VALUE",
+        "position": 17,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Payment value",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "PAYMENT_DATE",
+        "position": 18,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Payment date",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "AUTHORISATION",
+        "position": 19,
+        "data_type": "VARCHAR2",
+        "length": 12,
+        "nullable": true,
+        "comment": "Credit card authorisation code or cheque number or Coms XL code or voucher number",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 20,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 21,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ORDER_TYPE",
+        "position": 22,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=Order; 1=Quote; 2=stand a lone cash payment; 3=Works Order;  4=transfer 5=call off",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STATUS",
+        "position": 23,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 2,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=Open, 2=Authorised, 3=Manually Charged, 4=Ready to collect, 5=Charge to be collected, 6=Charged, 7=Charge failed, 8=Charge owing, 9=Cancelled 10=Provisional cash payment for a quote.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHARGING_USER",
+        "position": 24,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "User entering payment details",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "INTERFACE_STATUS",
+        "position": 25,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=not interfaced,1=interfaced,2=extraceted notinterfaced",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DREAM_DOCNUM",
+        "position": 26,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Dream document number",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CUSTOMER_ACCOUNT",
+        "position": 27,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Unique identifier of a customer",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "INTERFACE_REF",
+        "position": 28,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Interface reference",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CARD_START_DATE",
+        "position": 29,
+        "data_type": "VARCHAR2",
+        "length": 4,
+        "nullable": true,
+        "comment": "Credit card start date",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "AUTHORISE_DATE",
+        "position": 30,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Authorisation date",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "AUTHORISE_MESSAGE",
+        "position": 31,
+        "data_type": "VARCHAR2",
+        "length": 301,
+        "nullable": true,
+        "comment": "Authorise message returned from interface",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "FIN_TRANSACTION_TYPE",
+        "position": 32,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Financial transaction type - allows several differnt payment methods to be interfaced to the same transaction type in accounts system",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "STUGAD",
+        "position": 33,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "IMMEDIATE_CHARGE",
+        "position": 34,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1 - immediate charge payment, 0 - normal cash payment. ",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "LEDGER_DOCNUM",
+        "position": 35,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Document number from financial system",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "AUTOMATIC_REFUND",
+        "position": 36,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=automatic refund required",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRINT_COUNT",
+        "position": 37,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 2,
+        "scale": 0,
+        "nullable": true,
+        "comment": " Number of copies printed",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "REFUND_SOURCE",
+        "position": 38,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "REFUND_REASON",
+        "position": 39,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Refund reason",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "REFUND_USER",
+        "position": 40,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "user name",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "REFUND_DOCUMENT_NUM",
+        "position": 41,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ORIGINAL_USER",
+        "position": 42,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "User that entered the credit card details originally",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CARD_NUMBER_LOOKUP",
+        "position": 43,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Stores an encrypted version of the card number.  Used to allow search by card number",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PAYMENT_NUM",
+        "position": 44,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Sequential number within each SALES_DOCUMENT_NUM, used in conjunction with this to form a unique key.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "REFUND_CHEQUE_NUM",
+        "position": 45,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 8,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Cheque number for automatic cheque refunds.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "REFERENCE",
+        "position": 46,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Reference field.",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SIGNATURE_ID",
+        "position": 47,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Credit Card Signature Id.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "VOUCHER_NUM",
+        "position": 48,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 8,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Voucher Number.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CURRENCY_CODE",
+        "position": 49,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Currency of payment",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "BASE_PAYMENT_VALUE",
+        "position": 50,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Payment value in base currency",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "SALES_OFFICE",
+        "position": 51,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Sales Office",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CARD_ID",
+        "position": 52,
+        "data_type": "VARCHAR2",
+        "length": 8,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "REFUND_STATUS",
+        "position": 53,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MERGE_ACCOUNT",
+        "position": 54,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PAYMENT_VERIFIED",
+        "position": 55,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CARD_ECI_ID",
+        "position": 56,
+        "data_type": "VARCHAR2",
+        "length": 2,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CARD_SID_ID",
+        "position": 57,
+        "data_type": "VARCHAR2",
+        "length": 28,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CARD_VAV_ID",
+        "position": 58,
+        "data_type": "VARCHAR2",
+        "length": 32,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CARD_VTS_ID",
+        "position": 59,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CARD_VSC_ID",
+        "position": 60,
+        "data_type": "VARCHAR2",
+        "length": 24,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CARD_VSA_ID",
+        "position": 61,
+        "data_type": "VARCHAR2",
+        "length": 24,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CARD_VSH_ID",
+        "position": 62,
+        "data_type": "VARCHAR2",
+        "length": 28,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "REQUEST_REFERENCE",
+        "position": 63,
+        "data_type": "VARCHAR2",
+        "length": 256,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "STORAGE_REFERENCE",
+        "position": 64,
+        "data_type": "VARCHAR2",
+        "length": 256,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "OBFUSCATION_SCHEME",
+        "position": 65,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "AUTH_EXPIRY",
+        "position": 66,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Authorisation Expiry Date",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_SALES_PAYMENT_3",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "INTERFACE_REF",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_PAYMENT",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SALES_PAYMENT_4",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "CUSTOMER_ACCOUNT",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_PAYMENT",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SALES_PAYMENT_5",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "SALES_DOCUMENT_NUM",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_PAYMENT",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SALES_PAYMENT_5A",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "INTERFACE_STATUS",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "LEDGER_DOCNUM",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_PAYMENT",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SALES_PAYMENT_6",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "STATUS",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "SALES_DOCUMENT_NUM",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_PAYMENT",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SALES_PAYMENT_7",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "DREAM_DOCNUM",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_PAYMENT",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SALES_PAYMENT_8",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "REFUND_DOCUMENT_NUM",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_PAYMENT",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SALES_PAYMENT_AUTH",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "AUTHORISATION",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_PAYMENT",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SALES_PAYMENT_INV",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "SO_INVOICE_NUM",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_PAYMENT",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SALES_PAYMENT_LOOKUP",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "CARD_NUMBER_LOOKUP",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_PAYMENT",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SALES_PAY_CHANGE_DATE",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "CHANGE_DATE",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_PAYMENT",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 66,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 11,
+      "primary_keys": 0,
+      "total_columns": 66,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:55.596318+01:00"
+}

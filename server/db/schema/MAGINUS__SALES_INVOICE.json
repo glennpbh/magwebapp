@@ -1,0 +1,496 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "SALES_INVOICE",
+    "comment": "Sales invoice header",
+    "columns": [
+      {
+        "name": "SO_INVOICE_NUM",
+        "position": 1,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Uniquely identifies a Sales Order Invoice",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "INVOICE_DATE",
+        "position": 2,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Invoice date",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CUSTOMER_ACCOUNT",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Unique identifier of a customer",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CURRENCY_CODE",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Currency code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "VALUE",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Total sales value",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "COST",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Total cost including charges",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "PRINT_STATUS",
+        "position": 7,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=Deferred delete,2 = keep",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "INTERFACE_STATUS",
+        "position": 8,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=not interfaced,1=interfaced,2=extraceted notinterfaced",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 9,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 10,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STUGAD",
+        "position": 11,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRINT_COUNT",
+        "position": 12,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 2,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Number of copies printed",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PAYMENT_TERM",
+        "position": 13,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Unique identifier for a payment term",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "TEXT_NUMBER",
+        "position": 14,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Unique identifier of a text storage record.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SALES_OFFICE",
+        "position": 15,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Unique identifier of a sales office",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "MANUAL_INVOICE",
+        "position": 16,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=Normal invoice, 1=Manually input invoice",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "USERNAME",
+        "position": 17,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "Uniquely identifies a Maginus user",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "YOUR_REF",
+        "position": 18,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Customer order number or enterable reference on manual invoices\n",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "OUR_REF",
+        "position": 19,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Reference for manual invoicing",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CUST_SALES_OFFICE",
+        "position": 20,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "sales office of the customer",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "REP_CODE",
+        "position": 21,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "TRANSACTION_DATE",
+        "position": 22,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "INVOICE_CONSOLIDATION",
+        "position": 23,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "EDI_FLGN",
+        "position": 24,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "LEDGER_DOCNUM",
+        "position": 25,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Sales representative",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MERGE_ACCOUNT",
+        "position": 26,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_SO_INVOICE_1",
+        "type": "NORMAL",
+        "unique": true,
+        "columns": [
+          {
+            "name": "SO_INVOICE_NUM",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_INVOICE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SO_INVOICE_2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "CUSTOMER_ACCOUNT",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "INTERFACE_STATUS",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_INVOICE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SO_INVOICE_3",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "INTERFACE_STATUS",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "SO_INVOICE_NUM",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_INVOICE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SO_INVOICE_4",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "LEDGER_DOCNUM",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_INVOICE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_SO_INVOICE_DATE",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "INVOICE_DATE",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "SALES_INVOICE",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 26,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 5,
+      "primary_keys": 0,
+      "total_columns": 26,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:48.602325+01:00"
+}

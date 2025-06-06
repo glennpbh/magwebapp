@@ -1,0 +1,275 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "FIELD_DEFINITION",
+    "comment": "User definable field Definitions",
+    "columns": [
+      {
+        "name": "ENTITY_NAME",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": false,
+        "comment": "User defined field entity",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "FIELD_NAME",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "comment": "User defined field name",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SEQUENCE_NO",
+        "position": 3,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "0 ",
+        "comment": "sequence",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DATA_TYPE",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": false,
+        "comment": "type of data to be held in field e.g. e-mail address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEPENDENT",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "0 ",
+        "comment": "1=dependent field, 0=non-dependent",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MAX_SEGMENTS",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "1 ",
+        "comment": "maximum number of field segments allowed",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "WITHDRAWN",
+        "position": 7,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "0 ",
+        "comment": "1=withdrawn, 0=active",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "WITHDRAWN_DATE",
+        "position": 8,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "0 ",
+        "comment": "withdrawn date",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "LABEL_ID",
+        "position": 9,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "0 ",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "TOOL_TIP_ID",
+        "position": 10,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "0 ",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MANDATORY",
+        "position": 11,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "0 ",
+        "comment": "1=mandatory, 0=optional",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 12,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "0 ",
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 13,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      }
+    ],
+    "primary_keys": [
+      {
+        "name": "I_FIELD_DEFINITION",
+        "columns": [
+          "ENTITY_NAME",
+          "FIELD_NAME"
+        ],
+        "table_name": "FIELD_DEFINITION",
+        "schema_name": "MAGINUS"
+      }
+    ],
+    "foreign_keys": [
+      {
+        "name": "R_DATA_TYPE",
+        "columns": [
+          "DATA_TYPE"
+        ],
+        "referenced_schema": "MAGINUS",
+        "referenced_table": "DATA_TYPE",
+        "referenced_columns": [
+          "DATA_TYPE"
+        ],
+        "delete_rule": "NO ACTION",
+        "table_name": "FIELD_DEFINITION",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "R_ENTITY_TYPE",
+        "columns": [
+          "ENTITY_NAME"
+        ],
+        "referenced_schema": "MAGINUS",
+        "referenced_table": "ENTITY_TYPE",
+        "referenced_columns": [
+          "ENTITY_NAME"
+        ],
+        "delete_rule": "NO ACTION",
+        "table_name": "FIELD_DEFINITION",
+        "schema_name": "MAGINUS"
+      }
+    ],
+    "indexes": null
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 13,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 2,
+      "indexes": 0,
+      "primary_keys": 1,
+      "total_columns": 13,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:03.955923+01:00"
+}

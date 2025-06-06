@@ -1,0 +1,860 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "PRODUCT_WAREHOUSE",
+    "comment": "A product which may be stored in a warehouse",
+    "columns": [
+      {
+        "name": "WAREHOUSE_CODE",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "comment": "Unique identifier of a warehouse",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRODUCT_CODE",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": false,
+        "comment": "Uniquely identifies a product",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ALLOCATED_QUANTITY",
+        "position": 3,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": false,
+        "default_value": "0 ",
+        "comment": "Obsolete column - now in view_free_stock",
+        "type_mappings": {
+          "csharp": "decimal",
+          "typescript": "number",
+          "golang": "float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "STORES_STOCK",
+        "position": 4,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": false,
+        "default_value": "0 ",
+        "comment": "Obsolete column - now in view_free_stock ",
+        "type_mappings": {
+          "csharp": "decimal",
+          "typescript": "number",
+          "golang": "float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STUGAD",
+        "position": 7,
+        "data_type": "VARCHAR2",
+        "length": 9,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADU",
+        "position": 8,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": false,
+        "default_value": "0 ",
+        "comment": "Average daily useage",
+        "type_mappings": {
+          "csharp": "decimal",
+          "typescript": "number",
+          "golang": "float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "PICKING_LOCATION",
+        "position": 9,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Location from which an item was picked",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "WITHDRAWN_DATE",
+        "position": 10,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "The date the record was withdrawn from service",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "WITHDRAWN",
+        "position": 11,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "0 ",
+        "comment": "1 = Withdrawn from use, 0 = Not withdrawn",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "TEMP_ALLOCATED",
+        "position": 12,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "comment": "Temporary allocated quantity",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "ABC_CLASS",
+        "position": 13,
+        "data_type": "VARCHAR2",
+        "length": 1,
+        "nullable": true,
+        "comment": "Determines the ease of access to the location",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ALPHA_FACTOR",
+        "position": 14,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 5,
+        "scale": 2,
+        "nullable": true,
+        "comment": "Alpha smoothing factor",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "SINGLE_SMOOTH_QTY",
+        "position": 15,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Single smoothing factor quantity",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "DOUBLE_SMOOTH_QTY",
+        "position": 16,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Double smoothed quantity",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "UPDATE_ALPHA_FACT",
+        "position": 17,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Update alpha factor",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "LAST_IN_COST",
+        "position": 18,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Cost of last unit of stock received into warehouse",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "LAST_COUNT_DATE",
+        "position": 19,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Date of last stock count",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "FROZEN",
+        "position": 20,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "0 ",
+        "comment": "1= Frozen for stock counting 0 = Not frozen",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "FORECAST_HORIZON",
+        "position": 21,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 2,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Number of days for forecast horizon",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DUE_IN_BALANCE",
+        "position": 22,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Quantity due in excluding back to backs and directs",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "AVERAGE_COST",
+        "position": 23,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Average unit cost per stock unit",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "CONTENTION",
+        "position": 24,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "0=No stock contention,1=stock contention",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ALLOCATED_TO_BACK",
+        "position": 25,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Qty allocated to back to back order",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "REPAIR_LOCATION",
+        "position": 26,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Location code for repair items",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "REJECT_LOCATION",
+        "position": 27,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Location code for reject items",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "BUFFER_STOCK_QTY",
+        "position": 28,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Buffer Stock quantity, in stock units",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "BUFFER_STOCK_DAYS",
+        "position": 29,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "5",
+        "comment": "Buffer Stock number of days",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "BUFFER_STOCK_IND",
+        "position": 30,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Buffer Stock quantity is calculated from days x ADU (=0), or is held as quantity (=1)",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "REORDER_POINT_QTY",
+        "position": 31,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Re-order Point quantity, in stock units : reorder when stock falls below this quantity ",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "REORDER_POINT_DAYS",
+        "position": 32,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Re-order Point number of days ",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "REORDER_POINT_IND",
+        "position": 33,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Reorder Point quantity is calculated from days x ADU (=0), or is held as quantity (=1)",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "REORDER_QUANTITY",
+        "position": 34,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Re-order To quantity, in stock units : reorder upto this quantity",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "REORDER_DAYS",
+        "position": 35,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "12",
+        "comment": "Re-order To number of days ",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "REORDER_IND",
+        "position": 36,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Re-order To quantity is calculated from days x ADU (=0), or is held as quantity (=1)",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STOCK_TURNS",
+        "position": 37,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Annual stock turns",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ADU_RECALC",
+        "position": 38,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "1",
+        "comment": "Average daily usage recalculated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ADU_RECALC_DATE",
+        "position": 39,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Date average daily usage last calculated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "REPLENISH_FROM",
+        "position": 40,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "1",
+        "comment": "1=supplier 2=manufacturing 3=warehouse",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "REPLEN_FROM_WHSE",
+        "position": 41,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "warehouse used for replenishment",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "MIN_XFER_QTY",
+        "position": 42,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Minimum transfer quantity - stock units",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "REORDER_FROM",
+        "position": 43,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Obsolete",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "WHSE_TRANSFER_TIME",
+        "position": 44,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Time to transfer stock in days",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "XFER_MULTIPLE_QTY",
+        "position": 45,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 13,
+        "scale": 3,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Transfers must be in multiples of this quantity",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "BULK_PICK",
+        "position": 46,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Bulk Location code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADU_RECALC_DAYS",
+        "position": 47,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "INNER_LOCATION",
+        "position": 48,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SMEG_SERIAL_ON_ISSUE",
+        "position": 49,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_PRODUCT_WAREHOUSE",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "PRODUCT_CODE",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "WAREHOUSE_CODE",
+            "position": 2,
+            "order": "ASC"
+          },
+          {
+            "name": "WITHDRAWN",
+            "position": 3,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PRODUCT_WAREHOUSE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_PRODUCT_WH2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "PICKING_LOCATION",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "WAREHOUSE_CODE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PRODUCT_WAREHOUSE",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 49,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 2,
+      "primary_keys": 0,
+      "total_columns": 49,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:40.678289+01:00"
+}

@@ -54,17 +54,17 @@ export class JwtService {
       }
 
       return decoded as JwtPayload
-    } catch (error) {
-      if (error instanceof jwt.JsonWebTokenError) {
+    } catch (err) {
+      if (err instanceof jwt.JsonWebTokenError) {
         throw new Error('Invalid token')
       }
-      if (error instanceof jwt.TokenExpiredError) {
+      if (err instanceof jwt.TokenExpiredError) {
         throw new Error('Token expired')
       }
-      if (error instanceof jwt.NotBeforeError) {
+      if (err instanceof jwt.NotBeforeError) {
         throw new Error('Token not active')
       }
-      throw error
+      throw err
     }
   }
 

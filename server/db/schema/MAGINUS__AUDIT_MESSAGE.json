@@ -1,0 +1,225 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "AUDIT_MESSAGE",
+    "comment": "Audit messages generated from Maginus applications.",
+    "columns": [
+      {
+        "name": "RUN_ID",
+        "position": 1,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 8,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Uniquely identifies a run",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "RUN_TYPE",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Program name/run type",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SEVERITY",
+        "position": 3,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Indicates the severity of the message eg Warning, Help etc.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MESSAGE_TEXT",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 200,
+        "nullable": true,
+        "comment": "A message to be displayed as a result of an action.",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "MESSAGE_TYPE",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 2,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=report title,2=section head,3=page head,4=grp. head,5=text",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 6,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_TIME",
+        "position": 7,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 16,
+        "scale": 6,
+        "nullable": true,
+        "comment": "same as change date but accurate to millionth of a second",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "STUGAD",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 4,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_AUDIT_MESS2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "MESSAGE_TYPE",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "CHANGE_TIME",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "AUDIT_MESSAGE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_AUDIT_MESS3",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "CHANGE_USER",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "CHANGE_TIME",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "AUDIT_MESSAGE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_AUDIT_MESSAGE",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "RUN_ID",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "RUN_TYPE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "AUDIT_MESSAGE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_AUDIT_MESS_4",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "RUN_ID",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "MESSAGE_TYPE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "AUDIT_MESSAGE",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 8,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 4,
+      "primary_keys": 0,
+      "total_columns": 8,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:57:36.292742+01:00"
+}

@@ -1,0 +1,735 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "ADDITIONAL_CHARGE",
+    "comment": "Additional charges applicable to a sales order",
+    "columns": [
+      {
+        "name": "SALES_DOCUMENT_NUM",
+        "position": 1,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Document number",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ORDER_TYPE",
+        "position": 2,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=Order;1=Quote 5=call off",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SO_INVOICE_NUM",
+        "position": 3,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Uniquely identifies a Sales Order Invoice",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DESPATCH_NUM",
+        "position": 4,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Identifies a despatch",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "COST",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": false,
+        "comment": "Cost per document unit",
+        "type_mappings": {
+          "csharp": "decimal",
+          "typescript": "number",
+          "golang": "float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "STATUS",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0=Original charge from order, 1=charged, 2=Original charge over ridden by despatch",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DESCRIPTION",
+        "position": 7,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Description",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHARGE_CODE",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Charge code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POSTING_GROUP_1",
+        "position": 9,
+        "data_type": "VARCHAR2",
+        "length": 50,
+        "nullable": true,
+        "comment": "Posting group 1",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POSTING_GROUP_2",
+        "position": 10,
+        "data_type": "VARCHAR2",
+        "length": 50,
+        "nullable": true,
+        "comment": "Posting group for accounts interface",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POSTING_GROUP_3",
+        "position": 11,
+        "data_type": "VARCHAR2",
+        "length": 50,
+        "nullable": true,
+        "comment": "Posting group for accounts interface",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POSTING_GROUP_4",
+        "position": 12,
+        "data_type": "VARCHAR2",
+        "length": 50,
+        "nullable": true,
+        "comment": "Posting group for accounts interface",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POSTING_GROUP_5",
+        "position": 13,
+        "data_type": "VARCHAR2",
+        "length": 50,
+        "nullable": true,
+        "comment": "Posting group for accounts interface",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POSTING_GROUP_6",
+        "position": 14,
+        "data_type": "VARCHAR2",
+        "length": 50,
+        "nullable": true,
+        "comment": "Posting group for accounts interface",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POSTING_GROUP_7",
+        "position": 15,
+        "data_type": "VARCHAR2",
+        "length": 50,
+        "nullable": true,
+        "comment": "Posting group for accounts interface",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POSTING_GROUP_8",
+        "position": 16,
+        "data_type": "VARCHAR2",
+        "length": 50,
+        "nullable": true,
+        "comment": "Posting group for accounts interface",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POSTING_GROUP_9",
+        "position": 17,
+        "data_type": "VARCHAR2",
+        "length": 50,
+        "nullable": true,
+        "comment": "Posting group for accounts interface",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POSTING_ACCOUNT",
+        "position": 18,
+        "data_type": "VARCHAR2",
+        "length": 200,
+        "nullable": true,
+        "comment": "Account within financial system used for posting",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 19,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 20,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "STUGAD",
+        "position": 21,
+        "data_type": "VARCHAR2",
+        "length": 5,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "VAT_CODE",
+        "position": 22,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "VAT code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DESPATCH_TYPE",
+        "position": 23,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Uniquely identifies a despatch type",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEFAULT_VALUE",
+        "position": 24,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Value of default charge",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "VAT_INCLUSIVE",
+        "position": 25,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=VAT inclusive 0=VAT exclusive",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "VAT_AMOUNT",
+        "position": 26,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "VAT amount",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "PROMOTION_CODE",
+        "position": 27,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "The promotional price list used on this charge.",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PROMOTION",
+        "position": 28,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=This charge/discount is the result of a promotion 0=not a promotion",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "BASE_VAT_AMOUNT",
+        "position": 29,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Vat amount in base currency",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "BASE_COST",
+        "position": 30,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Cost in base currency",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "CHARGE_NUM",
+        "position": 31,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "charge identifier",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "NET_LINE_VALUE",
+        "position": 32,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "PERCENTAGE",
+        "position": 33,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "BASE_NET_LINE_VALUE",
+        "position": 34,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "CARRIER_CODE",
+        "position": 35,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DELIVERY_GROUP",
+        "position": 36,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ACTUAL_PERCENT",
+        "position": 37,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 5,
+        "scale": 2,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "EDI_FIXED",
+        "position": 38,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SALES_TAX",
+        "position": 39,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "SALES_TAX_ID",
+        "position": 40,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHARGE_GROUP",
+        "position": 41,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Used when Charge split over multiple rows",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "LINKED_SO_NUM",
+        "position": 42,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_ADDITIONAL_CHARGE_LINK",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "LINKED_SO_NUM",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "ADDITIONAL_CHARGE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_ADDITIONAL_CHARGE_NUM",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "CHARGE_NUM",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "ADDITIONAL_CHARGE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_ADDITIONAL_CHG",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "SALES_DOCUMENT_NUM",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "DESPATCH_NUM",
+            "position": 2,
+            "order": "ASC"
+          },
+          {
+            "name": "ORDER_TYPE",
+            "position": 3,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "ADDITIONAL_CHARGE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_ADD_CHARGE",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "SO_INVOICE_NUM",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "ADDITIONAL_CHARGE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_ADD_CHARGE_3",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "DESPATCH_NUM",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "ADDITIONAL_CHARGE",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 42,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 5,
+      "primary_keys": 0,
+      "total_columns": 42,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:57:36.935122+01:00"
+}

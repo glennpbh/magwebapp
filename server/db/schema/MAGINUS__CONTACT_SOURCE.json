@@ -1,0 +1,251 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "CONTACT_SOURCE",
+    "comment": "Contact source",
+    "columns": [
+      {
+        "name": "CUSTOMER_ACCOUNT",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": false,
+        "comment": "Unique identifier of a customer",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PROSPECT_CUST_TYPE",
+        "position": 2,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0=customer ; 1= prospect",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CONTACT_ID",
+        "position": 3,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Customer contact identified",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PROSPECT_SOURCE",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Defines a prospect source from prospect source table",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CONTACT_DATE",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date/time of contact",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 7,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CAMPAIGN_CODE",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Campaign code to which media is attached (formerly known as prospect_source)",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "MEDIA_CODE",
+        "position": 9,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Media code",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "STATUS",
+        "position": 10,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0 = initial action, 2 = sales order received",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CONTACT_KEY",
+        "position": 11,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Unique identifier of a customer contact",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MERGE_ACCOUNT",
+        "position": 12,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_CONTACT_SOURCE",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "CUSTOMER_ACCOUNT",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CONTACT_SOURCE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_CONTACT_SOURCE_2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "MEDIA_CODE",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CONTACT_SOURCE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_CONTACT_SOURCE_3",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "CAMPAIGN_CODE",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CONTACT_SOURCE",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 12,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 3,
+      "primary_keys": 0,
+      "total_columns": 12,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:57:51.527665+01:00"
+}

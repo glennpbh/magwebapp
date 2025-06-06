@@ -1,0 +1,101 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "AUDIT_COLUMNS",
+    "comment": "Tables and columns to be included in automatic generation of audit triggers.",
+    "columns": [
+      {
+        "name": "TABLE_NAME",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Oracle Table name",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "COLUMN_NAME",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Column to be audited",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "KEY1",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 35,
+        "nullable": true,
+        "comment": "First part of primary key for table being audited",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "KEY2",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 35,
+        "nullable": true,
+        "comment": "second part of primary key for table being auditied (optional)",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "IN_USE",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": " 0= not in use, 1= in use",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": null
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 5,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 0,
+      "primary_keys": 0,
+      "total_columns": 5,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:57:36.197741+01:00"
+}

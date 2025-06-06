@@ -1,0 +1,172 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "FIELD_DEPENDENCY",
+    "columns": [
+      {
+        "name": "DEPENDENCY_ID",
+        "position": 1,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ENTITY_NAME",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "FIELD_NAME",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "VALUE",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DEPENDENT_FIELD_NAME",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PARENT_DEPENDENCY_ID",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 7,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 8,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "0 ",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": [
+      {
+        "name": "I_FIELD_DEPENDENCY",
+        "columns": [
+          "DEPENDENCY_ID",
+          "ENTITY_NAME",
+          "FIELD_NAME",
+          "VALUE",
+          "DEPENDENT_FIELD_NAME"
+        ],
+        "table_name": "FIELD_DEPENDENCY",
+        "schema_name": "MAGINUS"
+      }
+    ],
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_FIELD_DEPENDENCY_2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "ENTITY_NAME",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "FIELD_NAME",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "FIELD_DEPENDENCY",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 8,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 1,
+      "primary_keys": 1,
+      "total_columns": 8,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:04.3035+01:00"
+}

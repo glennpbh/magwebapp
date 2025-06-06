@@ -1,0 +1,730 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "PO_ITEM",
+    "comment": "Details of items to be included in an order",
+    "columns": [
+      {
+        "name": "ORDER_NUMBER",
+        "position": 1,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Unique identifier of a purchase order",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ITEM_NUMBER",
+        "position": 2,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Uniquely defines an item within a document",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SUPPLIER_ACCOUNT",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": false,
+        "comment": "Uniquely identifies a supplier",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "WAREHOUSE_CODE",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Unique identifier of a warehouse",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DIRECT_INDICATOR",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0= Non-direct; 1 = Deliver direct to customer",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRODUCT_CODE",
+        "position": 6,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": false,
+        "comment": "Uniquely identifies a product",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "REQUIRED_QUANTITY",
+        "position": 7,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 19,
+        "scale": 9,
+        "nullable": true,
+        "comment": "Quantity required based in pricing unit",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "RECEIVED_QUANTITY",
+        "position": 8,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 19,
+        "scale": 9,
+        "nullable": true,
+        "comment": "Received quantity based in pricing unit",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "UNIT_CODE",
+        "position": 9,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Uniquely identifies a unit (Pricing Unit)",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "GROSS_COST",
+        "position": 10,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Cost per unit prior to disc/surch. in document units",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "REQUIRED_DATE",
+        "position": 11,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "The date the goods are required by.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DISCOUNT_PERC1",
+        "position": 12,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 2,
+        "nullable": true,
+        "comment": "First discount/surcharge percentage",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "DISCOUNT_PERC2",
+        "position": 13,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 2,
+        "nullable": true,
+        "comment": "Second discount/surcharge percentage",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "DISCOUNT_PERC3",
+        "position": 14,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 2,
+        "nullable": true,
+        "comment": "Third discount/surcharge percentage",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "DISCOUNT_PERC4",
+        "position": 15,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 2,
+        "nullable": true,
+        "comment": "Fourth discount/surcharge percentage",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "STATUS",
+        "position": 16,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0=Open, 1=Cancelled, 2=Complete",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PROMISE_DATE",
+        "position": 17,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Current promise delivery date",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "TEXT_NUMBER",
+        "position": 18,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Unique identifier of a text storage record.",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "BLANKET_ITEM_NUM",
+        "position": 19,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 7,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Identifies a blanket order",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRINT_NUMBER",
+        "position": 20,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 2,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Number of times item has been printed",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "SEND_REQUIRED",
+        "position": 21,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0 = Send document, 1 = Do not send document",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PRINT_COUNT",
+        "position": 22,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 2,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Number of copies printed",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "LONG_DESCRIPTION_1",
+        "position": 23,
+        "data_type": "VARCHAR2",
+        "length": 80,
+        "nullable": true,
+        "comment": "Detailed description  (first line)",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "LONG_DESCRIPTION_2",
+        "position": 24,
+        "data_type": "VARCHAR2",
+        "length": 80,
+        "nullable": true,
+        "comment": "Detailed description of a product (second line)",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 25,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 26,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "FIRST_PROMISE",
+        "position": 27,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Original promise date",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PROMISE_UPDATES",
+        "position": 28,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Number of promise updates",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "BASE_GROSS_COST",
+        "position": 29,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Gross cost in base currency",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "ORDER_REQUIRED",
+        "position": 30,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 19,
+        "scale": 9,
+        "nullable": true,
+        "comment": "Quantity in ordered units",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "ORDER_RECEIVED",
+        "position": 31,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 19,
+        "scale": 9,
+        "nullable": true,
+        "comment": "Received quantity in ordered units",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "ORDER_UNIT",
+        "position": 32,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Unit in which the order has been placed",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "RETRO_REBATE",
+        "position": 33,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=Retro rebate available , 0 = retro rebate not applicable",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "BULK_DISCOUNT",
+        "position": 34,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Discount value for bulk purchase",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "BULK_DISCOUNT_IND",
+        "position": 35,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "0= No bulk discount  1=bulk discount",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "NET_PRICE",
+        "position": 36,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Price net of discount in purchase order currency\n",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "BASE_NET_PRICE",
+        "position": 37,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Net price in system base currency (pricing unit)",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "LINE_WEIGHT",
+        "position": 38,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 19,
+        "scale": 9,
+        "nullable": true,
+        "comment": "Order line weight",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "BATCH_ID",
+        "position": 39,
+        "data_type": "VARCHAR2",
+        "length": 15,
+        "nullable": true,
+        "comment": "Uniquely identifies a batch",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "BATCH_REFERENCE",
+        "position": 40,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Batch reference (free text)",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "SHIPMENT_NUM",
+        "position": 41,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "AVAILABLE_DATE",
+        "position": 42,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_PO_ITEM",
+        "type": "NORMAL",
+        "unique": true,
+        "columns": [
+          {
+            "name": "ORDER_NUMBER",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "ITEM_NUMBER",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PO_ITEM",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_PO_ITEM_2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "PRODUCT_CODE",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PO_ITEM",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_PO_ITEM_3",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "PRODUCT_CODE",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "STATUS",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "PO_ITEM",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 42,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 3,
+      "primary_keys": 0,
+      "total_columns": 42,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:18.956972+01:00"
+}

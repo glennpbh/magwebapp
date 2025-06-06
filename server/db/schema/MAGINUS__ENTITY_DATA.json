@@ -1,0 +1,317 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "ENTITY_DATA",
+    "columns": [
+      {
+        "name": "DATA_KEY",
+        "position": 1,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "FIELD_NAME",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ENTITY_NAME",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": false,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ENTITY_KEY1",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ENTITY_KEY2",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DATA_TEXT",
+        "position": 6,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DATA_NUMBER",
+        "position": 7,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "default_value": "0",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "LARGE_TEXT",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 4000,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ENTITY_KEY3",
+        "position": 9,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DATA_CLOB",
+        "position": 10,
+        "data_type": "CLOB",
+        "length": 4000,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "STATUS",
+        "position": 11,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": [
+      {
+        "name": "I_ENTITY_DATA",
+        "columns": [
+          "DATA_KEY",
+          "ENTITY_NAME",
+          "FIELD_NAME"
+        ],
+        "table_name": "ENTITY_DATA",
+        "schema_name": "MAGINUS"
+      }
+    ],
+    "foreign_keys": [
+      {
+        "name": "R_FIELD_DEFINITION",
+        "columns": [
+          "ENTITY_NAME",
+          "ENTITY_NAME",
+          "FIELD_NAME",
+          "FIELD_NAME"
+        ],
+        "referenced_schema": "MAGINUS",
+        "referenced_table": "FIELD_DEFINITION",
+        "referenced_columns": [
+          "ENTITY_NAME",
+          "ENTITY_NAME",
+          "FIELD_NAME",
+          "FIELD_NAME"
+        ],
+        "delete_rule": "NO ACTION",
+        "table_name": "ENTITY_DATA",
+        "schema_name": "MAGINUS"
+      }
+    ],
+    "indexes": [
+      {
+        "name": "I_ENTITY_DATA_2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "ENTITY_NAME",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "FIELD_NAME",
+            "position": 2,
+            "order": "ASC"
+          },
+          {
+            "name": "ENTITY_KEY1",
+            "position": 3,
+            "order": "ASC"
+          },
+          {
+            "name": "ENTITY_KEY2",
+            "position": 4,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "ENTITY_DATA",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_ENTITY_DATA_3",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "ENTITY_NAME",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "FIELD_NAME",
+            "position": 2,
+            "order": "ASC"
+          },
+          {
+            "name": "DATA_TEXT",
+            "position": 3,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "ENTITY_DATA",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_ENTITY_DATA_4",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "ENTITY_NAME",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "FIELD_NAME",
+            "position": 2,
+            "order": "ASC"
+          },
+          {
+            "name": "DATA_NUMBER",
+            "position": 3,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "ENTITY_DATA",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_ENTITY_DATA_5",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "ENTITY_NAME",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "ENTITY_KEY1",
+            "position": 2,
+            "order": "ASC"
+          },
+          {
+            "name": "ENTITY_KEY2",
+            "position": 3,
+            "order": "ASC"
+          },
+          {
+            "name": "FIELD_NAME",
+            "position": 4,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "ENTITY_DATA",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 11,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 1,
+      "indexes": 4,
+      "primary_keys": 1,
+      "total_columns": 11,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:58:03.939007+01:00"
+}

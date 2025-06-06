@@ -1,0 +1,278 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "AUDIT_HEADER",
+    "comment": "Maginus audit trail of table amendments. See audit_detail for the actual values amended.",
+    "columns": [
+      {
+        "name": "AUDIT_ID",
+        "position": 1,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Unique identifier of an audited transaction (system generated)",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "PC_LOGIN",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 15,
+        "nullable": true,
+        "comment": "Operating system username",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 3,
+        "data_type": "DATE",
+        "length": 7,
+        "nullable": true,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "DateTime?",
+          "typescript": "Date",
+          "golang": "*time.Time",
+          "python": "datetime"
+        }
+      },
+      {
+        "name": "TERMINAL",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "IP address of terminal performing transaction",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "TABLE_NAME",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Oracle Table name",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ACTION",
+        "position": 6,
+        "data_type": "VARCHAR2",
+        "length": 1,
+        "nullable": true,
+        "comment": "I=Insert U=Update D=Delete",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRIMARY_KEY1",
+        "position": 7,
+        "data_type": "VARCHAR2",
+        "length": 50,
+        "nullable": true,
+        "comment": "First part of primary key for table being audited",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRIMARY_KEY2",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 50,
+        "nullable": true,
+        "comment": "second part of primary key for table being auditied (optional)",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "MODULE",
+        "position": 9,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "Application performing transaction (if null refer to program column)",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PROGRAM",
+        "position": 10,
+        "data_type": "VARCHAR2",
+        "length": 48,
+        "nullable": true,
+        "comment": " Unique identifier of a program",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_AUDIT_HEADER1",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "TABLE_NAME",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "PC_LOGIN",
+            "position": 2,
+            "order": "ASC"
+          },
+          {
+            "name": "PRIMARY_KEY1",
+            "position": 3,
+            "order": "ASC"
+          },
+          {
+            "name": "PRIMARY_KEY2",
+            "position": 4,
+            "order": "ASC"
+          },
+          {
+            "name": "CHANGE_DATE",
+            "position": 5,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "AUDIT_HEADER",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_AUDIT_HEADER2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "TABLE_NAME",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "CHANGE_DATE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "AUDIT_HEADER",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_AUDIT_HEADER3",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "TABLE_NAME",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "PC_LOGIN",
+            "position": 2,
+            "order": "ASC"
+          },
+          {
+            "name": "CHANGE_DATE",
+            "position": 3,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "AUDIT_HEADER",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_AUDIT_HEADER4",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "TABLE_NAME",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "PRIMARY_KEY1",
+            "position": 2,
+            "order": "ASC"
+          },
+          {
+            "name": "PRIMARY_KEY2",
+            "position": 3,
+            "order": "ASC"
+          },
+          {
+            "name": "CHANGE_DATE",
+            "position": 4,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "AUDIT_HEADER",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 10,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 4,
+      "primary_keys": 0,
+      "total_columns": 10,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:57:36.833747+01:00"
+}

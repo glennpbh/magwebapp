@@ -1,0 +1,317 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "AUDIT_USER_MESSAGE",
+    "comment": "Audit of user message table used for support purposes",
+    "columns": [
+      {
+        "name": "TO_USER",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "comment": "User to which message has been sent",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "FROM_USER",
+        "position": 2,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "comment": "User who sent message",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "MESSAGE_TYPE",
+        "position": 3,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 2,
+        "scale": 0,
+        "nullable": true,
+        "comment": "See list of alert types in maginus schema",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "MESSAGE_TEXT",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 200,
+        "nullable": false,
+        "comment": "Message",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "STATUS",
+        "position": 5,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Obsolete",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CREATION_DATE",
+        "position": 6,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": false,
+        "comment": "date alert was originally created",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "LAST_ACCESS_DATE",
+        "position": 7,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": true,
+        "comment": "Last date message was viewed",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "REFERENCE",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Reference to original document",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "DOCUMENT_TYPE",
+        "position": 9,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 2,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=sales order/quote, 2=credit note, 3=RMA, 4=Fax job",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 10,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 11,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "VALUE",
+        "position": 12,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 15,
+        "scale": 5,
+        "nullable": true,
+        "comment": "Value",
+        "type_mappings": {
+          "csharp": "decimal?",
+          "typescript": "number",
+          "golang": "*float64",
+          "python": "float"
+        }
+      },
+      {
+        "name": "REFERENCE2",
+        "position": 13,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "additional reference",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "POST_DATED",
+        "position": 14,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "comment": "1=post dated alert unprocessed, 2=post dated alert processed 0=not post dated",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "TRANS_TYPE",
+        "position": 15,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": true,
+        "comment": "DELETE, INSERT or UPDATE",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "TRANS_TIME",
+        "position": 16,
+        "data_type": "DATE",
+        "length": 7,
+        "nullable": true,
+        "comment": "Time message was created",
+        "type_mappings": {
+          "csharp": "DateTime?",
+          "typescript": "Date",
+          "golang": "*time.Time",
+          "python": "datetime"
+        }
+      },
+      {
+        "name": "TRANS_DATE",
+        "position": 17,
+        "data_type": "DATE",
+        "length": 7,
+        "nullable": true,
+        "comment": "transaction_date",
+        "type_mappings": {
+          "csharp": "DateTime?",
+          "typescript": "Date",
+          "golang": "*time.Time",
+          "python": "datetime"
+        }
+      }
+    ],
+    "primary_keys": null,
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_AUDIT_USER_MESSAGE",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "REFERENCE",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "AUDIT_USER_MESSAGE",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_AUDIT_USER_MESSAGE_2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "REFERENCE",
+            "position": 1,
+            "order": "ASC"
+          },
+          {
+            "name": "MESSAGE_TYPE",
+            "position": 2,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "AUDIT_USER_MESSAGE",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 17,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 2,
+      "primary_keys": 0,
+      "total_columns": 17,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:57:44.051708+01:00"
+}

@@ -1,0 +1,449 @@
+{
+  "table": {
+    "schema": "MAGINUS",
+    "name": "CUSTOMER_ADDRESS",
+    "comment": "Customer address",
+    "columns": [
+      {
+        "name": "CUSTOMER_ACCOUNT",
+        "position": 1,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": false,
+        "comment": "Unique identifier of a customer",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS_ID",
+        "position": 2,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 3,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "1 ",
+        "comment": "Together with customer account identifies a customer address",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "ADDRESS1",
+        "position": 3,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "First line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS2",
+        "position": 4,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Second line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS3",
+        "position": 5,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "third line of an address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS4",
+        "position": 6,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "fourth line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS5",
+        "position": 7,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Fifth line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS6",
+        "position": 8,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "Sixth line of address",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PRIME_ADDRESS_LINE",
+        "position": 9,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "default_value": "1 ",
+        "comment": "Primary address line number for outputting onto reports",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "POSTCODE",
+        "position": 10,
+        "data_type": "VARCHAR2",
+        "length": 10,
+        "nullable": true,
+        "comment": "Postcode",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "COUNTRY_CODE",
+        "position": 11,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "comment": "Unique identifier of a country",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "NORMAL_DESPATCH",
+        "position": 12,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": false,
+        "comment": "Normal method of despatch - foreign key to despatch type",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ROUTE",
+        "position": 13,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 4,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "Despatch route sequence",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_DATE",
+        "position": 14,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 10,
+        "scale": 0,
+        "nullable": false,
+        "comment": "Date record was last updated",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "CHANGE_USER",
+        "position": 15,
+        "data_type": "VARCHAR2",
+        "length": 20,
+        "nullable": false,
+        "comment": "The user entering or last updating the record",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "PROSPECT_CUST_TYPE",
+        "position": 16,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": false,
+        "comment": "0=customer ; 1= prospect",
+        "type_mappings": {
+          "csharp": "int",
+          "typescript": "number",
+          "golang": "int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DELIVERY_TEXT_NUM",
+        "position": 17,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 9,
+        "scale": 0,
+        "nullable": true,
+        "default_value": "0",
+        "comment": "reference to text storage table",
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      },
+      {
+        "name": "DELIVERY_WAREHOUSE",
+        "position": 18,
+        "data_type": "VARCHAR2",
+        "length": 6,
+        "nullable": true,
+        "comment": "Warehouse to which goods are to be delivered",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "LOCATION_REF",
+        "position": 19,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "EDI location reference",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "ADDRESS_NAME",
+        "position": 20,
+        "data_type": "VARCHAR2",
+        "length": 30,
+        "nullable": true,
+        "comment": "E.G. House Name",
+        "type_mappings": {
+          "csharp": "string",
+          "typescript": "string",
+          "golang": "*string",
+          "python": "str"
+        }
+      },
+      {
+        "name": "VALIDATION_STATUS",
+        "position": 21,
+        "data_type": "NUMBER",
+        "length": 22,
+        "precision": 1,
+        "scale": 0,
+        "nullable": true,
+        "type_mappings": {
+          "csharp": "int?",
+          "typescript": "number",
+          "golang": "*int",
+          "python": "int"
+        }
+      }
+    ],
+    "primary_keys": [
+      {
+        "name": "SYS_C0029478",
+        "columns": [
+          "CUSTOMER_ACCOUNT",
+          "ADDRESS_ID"
+        ],
+        "table_name": "CUSTOMER_ADDRESS",
+        "schema_name": "MAGINUS"
+      }
+    ],
+    "foreign_keys": null,
+    "indexes": [
+      {
+        "name": "I_CUSTOMER_ADD_2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "POSTCODE",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CUSTOMER_ADDRESS",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_CUSTOMER_ADD_CSC1",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "ADDRESS1",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CUSTOMER_ADDRESS",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_CUSTOMER_ADD_CSC2",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "ADDRESS2",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CUSTOMER_ADDRESS",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_CUSTOMER_ADD_CSC3",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "ADDRESS3",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CUSTOMER_ADDRESS",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_CUSTOMER_ADD_CSC4",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "ADDRESS4",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CUSTOMER_ADDRESS",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_CUSTOMER_ADD_CSC5",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "ADDRESS5",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CUSTOMER_ADDRESS",
+        "schema_name": "MAGINUS"
+      },
+      {
+        "name": "I_CUSTOMER_ADD_CSC6",
+        "type": "NORMAL",
+        "unique": false,
+        "columns": [
+          {
+            "name": "ADDRESS6",
+            "position": 1,
+            "order": "ASC"
+          }
+        ],
+        "table_name": "CUSTOMER_ADDRESS",
+        "schema_name": "MAGINUS"
+      }
+    ]
+  },
+  "metadata": {
+    "requested_schemas": [
+      "MAGINUS"
+    ],
+    "total_tables": 1,
+    "total_columns": 21,
+    "processing_time": 0,
+    "statistics": {
+      "foreign_keys": 0,
+      "indexes": 7,
+      "primary_keys": 1,
+      "total_columns": 21,
+      "total_schemas": 1,
+      "total_tables": 1
+    }
+  },
+  "generated": "2025-06-02T09:57:52.59737+01:00"
+}
