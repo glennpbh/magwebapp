@@ -8,6 +8,11 @@ const menuItems = [
     icon: 'heroicons:home'
   },
   {
+    label: 'Orders',
+    path: '/orders',
+    icon: 'heroicons:shopping-bag'
+  },
+  {
     label: 'Customers',
     path: '/customers',
     icon: 'heroicons:users'
