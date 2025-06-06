@@ -1,0 +1,34 @@
+# Dependencies
+node_modules
+.nuxt
+.output
+dist
+
+# IDE
+.idea
+
+# Cache
+.nitro
+.cache
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Generated files
+server/db/schema/*.json
+
+# Build artifacts
+*.min.js
+*.min.css
+
+# Package files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Claude configuration
+.claude

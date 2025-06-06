@@ -19,7 +19,50 @@ npm run preview      # Preview production build locally
 
 **Linting:**
 ```bash
-npx eslint .         # Run ESLint (no dedicated script in package.json)
+npm run lint         # Run ESLint
+npm run lint:fix     # Run ESLint and fix auto-fixable issues
+```
+
+**Formatting:**
+```bash
+npm run format       # Format all files with Prettier
+npm run format:check # Check if files need formatting
+```
+
+**Note:** ESLint is configured to respect Prettier formatting rules. Use `npm run lint:fix` to automatically fix both linting and formatting issues.
+
+**Development Services:**
+```bash
+# Start PostgreSQL, Redis, and monitoring tools
+docker-compose -f docker-compose.dev.yml up -d
+
+# Stop development services
+docker-compose -f docker-compose.dev.yml down
+
+# View service logs
+docker-compose -f docker-compose.dev.yml logs -f [service-name]
+```
+
+**Development URLs:**
+- pgAdmin (PostgreSQL): http://localhost:5050
+- BullMQ Dashboard: http://localhost:3001  
+- Redis Commander: http://localhost:8081
+
+**Database Management:**
+```bash
+# Drizzle ORM commands
+npm run db:generate     # Generate migrations
+npm run db:migrate      # Run migrations  
+npm run db:push         # Push schema changes
+npm run db:studio       # Open Drizzle Studio
+```
+
+**Customer Sync:**
+```bash
+# Ultra-fast Oracle → PostgreSQL sync
+npm run sync:customers:full         # Full sync (~100k records/sec)
+npm run sync:customers:incremental  # Incremental sync (last 24h)
+npm run sync:customers -- --help    # Show sync options
 ```
 
 ## Architecture

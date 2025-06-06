@@ -7,18 +7,15 @@ declare module 'h3' {
   }
 }
 
-const publicRoutes = [
-  '/api/auth/login',
-  '/api/test-db'
-]
+const publicRoutes = ['/api/auth/login', '/api/test-db']
 
 function isPublicRoute(path: string): boolean {
-  return publicRoutes.some(route => path.startsWith(route))
+  return publicRoutes.some((route) => path.startsWith(route))
 }
 
 export default defineEventHandler(async (event) => {
   const url = getRequestURL(event)
-  
+
   if (!url.pathname.startsWith('/api/') || isPublicRoute(url.pathname)) {
     return
   }
@@ -37,7 +34,6 @@ export default defineEventHandler(async (event) => {
 
     const payload = jwtService.verifyToken(token)
     event.context.user = payload
-
   } catch (err) {
     if (err instanceof Error) {
       throw createError({
@@ -45,7 +41,7 @@ export default defineEventHandler(async (event) => {
         statusMessage: err.message
       })
     }
-    
+
     throw createError({
       statusCode: 401,
       statusMessage: 'Invalid authorization token'

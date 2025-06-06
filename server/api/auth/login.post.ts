@@ -1,5 +1,5 @@
-import { LdapService } from '../../services/ldap'
 import { JwtService } from '../../services/jwt'
+import { LdapService } from '../../services/ldap'
 
 interface LoginRequest {
   email: string
@@ -60,7 +60,7 @@ export default defineEventHandler(async (event): Promise<LoginResponse> => {
     }
   } catch (err) {
     console.error('Login error:', err)
-    
+
     return {
       success: false,
       message: 'Authentication failed'

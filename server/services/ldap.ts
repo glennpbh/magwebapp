@@ -37,14 +37,23 @@ export class LdapService {
     const searchUserUpn = process.env.LDAP_SEARCH_USER_UPN
     const searchUserPassword = process.env.LDAP_SEARCH_USER_PASSWORD
 
-    if (!ldapServers || !baseDn || !userSearchBase || !groupSearchBase || !searchUserUpn || !searchUserPassword) {
-      throw new Error('LDAP_SERVERS, LDAP_BASE_DN, LDAP_USER_SEARCH_BASE, LDAP_GROUP_SEARCH_BASE, LDAP_SEARCH_USER_UPN, and LDAP_SEARCH_USER_PASSWORD environment variables are required')
+    if (
+      !ldapServers ||
+      !baseDn ||
+      !userSearchBase ||
+      !groupSearchBase ||
+      !searchUserUpn ||
+      !searchUserPassword
+    ) {
+      throw new Error(
+        'LDAP_SERVERS, LDAP_BASE_DN, LDAP_USER_SEARCH_BASE, LDAP_GROUP_SEARCH_BASE, LDAP_SEARCH_USER_UPN, and LDAP_SEARCH_USER_PASSWORD environment variables are required'
+      )
     }
 
-    const servers = ldapServers.split(',').map(server => server.trim())
+    const servers = ldapServers.split(',').map((server) => server.trim())
     const protocol = ldapPort === '636' ? 'ldaps' : 'ldap'
-    
-    return servers.map(server => ({
+
+    return servers.map((server) => ({
       url: `${protocol}://${server}:${ldapPort}`,
       baseDn,
       userSearchBase,
@@ -70,8 +79,8 @@ export class LdapService {
   }
 
   private async authenticateWithServer(
-    config: LdapConfig, 
-    email: string, 
+    config: LdapConfig,
+    email: string,
     password: string
   ): Promise<LdapUser | null> {
     return new Promise((resolve, reject) => {
@@ -125,20 +134,20 @@ export class LdapService {
   }
 
   private async getUserDetailsByUpn(
-    client: ldap.Client, 
-    config: LdapConfig, 
+    client: ldap.Client,
+    config: LdapConfig,
     upn: string
   ): Promise<LdapUser> {
     return new Promise((resolve, reject) => {
       const searchBase = `${config.userSearchBase},${config.baseDn}`
       const searchFilter = `(userPrincipalName=${upn})`
-      
+
       const searchOptions: ldap.SearchOptions = {
         scope: 'sub',
         filter: searchFilter,
         attributes: [
           'company',
-          'department', 
+          'department',
           'description',
           'displayName',
           'mail',
@@ -170,9 +179,9 @@ export class LdapService {
           user.department = this.getAttributeValue(attributes, 'department') || ''
           user.description = this.getAttributeValue(attributes, 'description') || ''
           user.principalName = this.getAttributeValue(attributes, 'userPrincipalName') || upn
-          
+
           const memberOf = this.getAttributeValues(attributes, 'memberOf')
-          user.memberOf = memberOf.map(dn => this.extractGroupName(dn))
+          user.memberOf = memberOf.map((dn) => this.extractGroupName(dn))
         })
 
         searchResult.on('error', (err) => {
@@ -191,18 +200,18 @@ export class LdapService {
   }
 
   private getAttributeValue(attributes: unknown[], attributeName: string): string | undefined {
-    const attr = attributes.find((a: unknown) => 
-      typeof a === 'object' && a !== null && 'type' in a && a.type === attributeName
+    const attr = attributes.find(
+      (a: unknown) => typeof a === 'object' && a !== null && 'type' in a && a.type === attributeName
     ) as { values?: string[] } | undefined
-    
+
     return attr?.values?.[0]
   }
 
   private getAttributeValues(attributes: unknown[], attributeName: string): string[] {
-    const attr = attributes.find((a: unknown) => 
-      typeof a === 'object' && a !== null && 'type' in a && a.type === attributeName
+    const attr = attributes.find(
+      (a: unknown) => typeof a === 'object' && a !== null && 'type' in a && a.type === attributeName
     ) as { values?: string[] } | undefined
-    
+
     return attr?.values || []
   }
 

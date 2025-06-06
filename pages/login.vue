@@ -60,7 +60,7 @@ const handleSubmit = async () => {
 
   try {
     const response = await login(form.email, form.password)
-    
+
     if (!response.success) {
       errors.general = response.message || 'Login failed. Please check your credentials.'
     }
@@ -79,7 +79,10 @@ useSeoMeta({
 </script>
 
 <template>
-  <div data-theme="dark" class="min-h-screen flex items-center justify-center bg-base-100 py-12 px-4 sm:px-6 lg:px-8">
+  <div
+    data-theme="dark"
+    class="min-h-screen flex items-center justify-center bg-base-100 py-12 px-4 sm:px-6 lg:px-8"
+  >
     <div class="max-w-md w-full space-y-8">
       <div class="text-center">
         <h1 class="text-4xl font-bold text-base-content mb-2">Maginus</h1>
@@ -88,7 +91,7 @@ useSeoMeta({
 
       <div class="card bg-base-200 shadow-xl">
         <div class="card-body">
-          <form @submit.prevent="handleSubmit" class="space-y-6">
+          <form class="space-y-6" @submit.prevent="handleSubmit">
             <!-- Email Field -->
             <div class="form-control">
               <label class="label">
@@ -138,7 +141,7 @@ useSeoMeta({
               <button
                 type="submit"
                 class="btn btn-primary w-full"
-                :class="{ 'loading': isLoading }"
+                :class="{ loading: isLoading }"
                 :disabled="isLoading"
               >
                 <span v-if="!isLoading">Sign in</span>

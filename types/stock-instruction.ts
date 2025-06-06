@@ -1,0 +1,31 @@
+export interface StockInstruction {
+  movementType?: string
+  movementListNum?: number
+  instructionNumber: number
+  warehouseCode?: string
+  productCode?: string
+  fromLocation?: string
+  toLocation?: string
+  quantity?: number
+  unitCode?: string
+  handlingId?: number
+  batchId?: string
+  serialNum?: string
+  status?: number
+  printStatus?: number
+  reference?: string
+  createdBy?: string
+  creationDate?: number
+  issueTo?: string
+  issueDate?: number
+  changeUser?: string
+  changeDate?: number
+  printCount?: number
+  bulkConversion?: number
+  documentType?: number
+  documentNumber?: number
+  demandQuantity?: number
+  storesStock?: number
+  hhtDeviceId?: string
+  resultEntered?: number
+}

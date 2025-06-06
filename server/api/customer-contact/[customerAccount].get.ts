@@ -1,5 +1,6 @@
-import { queryMultiple } from '../../db/query'
 import type { CustomerContact } from '~/types/customer-contact'
+
+import { queryMultiple } from '../../db/query'
 
 export default defineEventHandler(async (event) => {
   const customerAccount = getRouterParam(event, 'customerAccount')
@@ -61,7 +62,7 @@ export default defineEventHandler(async (event) => {
     }
   } catch (err) {
     console.error('Customer contact lookup error:', err)
-    
+
     throw createError({
       statusCode: 500,
       statusMessage: 'Failed to retrieve customer contacts'

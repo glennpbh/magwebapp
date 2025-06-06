@@ -19,7 +19,8 @@ useSeoMeta({
         <div class="max-w-md">
           <h1 class="text-4xl font-bold">Welcome back!</h1>
           <p class="py-6 text-base-content/70">
-            Hello {{ user?.displayName || user?.email }}, you're successfully logged in to the Maginus Web Application.
+            Hello {{ user?.displayName || user?.email }}, you're successfully logged in to the
+            Maginus Web Application.
           </p>
         </div>
       </div>
@@ -44,11 +45,7 @@ useSeoMeta({
           <div>
             <span class="font-medium">Groups:</span>
             <div class="flex flex-wrap gap-2 mt-2">
-              <div
-                v-for="group in user?.groups"
-                :key="group"
-                class="badge badge-primary"
-              >
+              <div v-for="group in user?.groups" :key="group" class="badge badge-primary">
                 {{ group }}
               </div>
             </div>
@@ -67,9 +64,7 @@ useSeoMeta({
           </h3>
           <p class="text-base-content/70">Manage customer accounts and information</p>
           <div class="card-actions justify-end">
-            <NuxtLink to="/customers" class="btn btn-primary btn-sm">
-              View Customers
-            </NuxtLink>
+            <NuxtLink to="/customers" class="btn btn-primary btn-sm">View Customers</NuxtLink>
           </div>
         </div>
       </div>
@@ -82,9 +77,7 @@ useSeoMeta({
           </h3>
           <p class="text-base-content/70">Generate and view business reports</p>
           <div class="card-actions justify-end">
-            <NuxtLink to="/reports" class="btn btn-primary btn-sm">
-              View Reports
-            </NuxtLink>
+            <NuxtLink to="/reports" class="btn btn-primary btn-sm">View Reports</NuxtLink>
           </div>
         </div>
       </div>
@@ -97,9 +90,7 @@ useSeoMeta({
           </h3>
           <p class="text-base-content/70">Configure application settings</p>
           <div class="card-actions justify-end">
-            <NuxtLink to="/settings" class="btn btn-primary btn-sm">
-              Open Settings
-            </NuxtLink>
+            <NuxtLink to="/settings" class="btn btn-primary btn-sm">Open Settings</NuxtLink>
           </div>
         </div>
       </div>
@@ -121,7 +112,7 @@ useSeoMeta({
             <div class="stat-value text-success">Online</div>
             <div class="stat-desc">Oracle 12c connected</div>
           </div>
-          
+
           <div class="stat">
             <div class="stat-figure text-success">
               <Icon name="heroicons:check-circle" class="h-8 w-8" />
@@ -130,7 +121,7 @@ useSeoMeta({
             <div class="stat-value text-success">Active</div>
             <div class="stat-desc">LDAP authentication working</div>
           </div>
-          
+
           <div class="stat">
             <div class="stat-figure text-success">
               <Icon name="heroicons:check-circle" class="h-8 w-8" />

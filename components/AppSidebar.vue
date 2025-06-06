@@ -42,7 +42,7 @@ const isActive = (path: string) => {
     <li v-for="item in menuItems" :key="item.path">
       <NuxtLink
         :to="item.path"
-        :class="{ 'active': isActive(item.path) }"
+        :class="{ active: isActive(item.path) }"
         class="flex items-center gap-3"
       >
         <Icon :name="item.icon" class="h-5 w-5" />

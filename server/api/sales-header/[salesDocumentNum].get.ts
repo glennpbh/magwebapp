@@ -1,5 +1,6 @@
-import { querySingle } from '../../db/query'
 import type { SalesHeader } from '~/types/sales-header'
+
+import { querySingle } from '../../db/query'
 
 export default defineEventHandler(async (event) => {
   const salesDocumentNum = getRouterParam(event, 'salesDocumentNum')
@@ -172,7 +173,7 @@ export default defineEventHandler(async (event) => {
     }
   } catch (err) {
     console.error('Sales header lookup error:', err)
-    
+
     if (err instanceof Error && err.message.includes('statusCode')) {
       throw err
     }

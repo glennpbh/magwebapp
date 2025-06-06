@@ -24,7 +24,9 @@ export async function initializePool(): Promise<void> {
   // Parse connection string format: user/password@host:port/service_name
   const match = connectionString.match(/^(.+?)\/(.+?)@(.+)$/)
   if (!match) {
-    throw new Error('Invalid ORACLE_CONNECTION_STRING format. Expected: user/password@host:port/service_name')
+    throw new Error(
+      'Invalid ORACLE_CONNECTION_STRING format. Expected: user/password@host:port/service_name'
+    )
   }
 
   const [, user, password, connectString] = match

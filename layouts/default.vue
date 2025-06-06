@@ -8,7 +8,7 @@ const { isAuthenticated } = useAuth()
   <div data-theme="dark" class="min-h-screen bg-base-100">
     <div v-if="isAuthenticated" class="drawer lg:drawer-open">
       <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
-      
+
       <!-- Page content -->
       <div class="drawer-content flex flex-col">
         <!-- Navbar -->
@@ -25,13 +25,13 @@ const { isAuthenticated } = useAuth()
             <AppNavigation />
           </div>
         </div>
-        
+
         <!-- Main content -->
         <main class="flex-1 p-6">
           <slot />
         </main>
       </div>
-      
+
       <!-- Sidebar -->
       <div class="drawer-side">
         <label for="drawer-toggle" class="drawer-overlay"></label>
@@ -43,7 +43,7 @@ const { isAuthenticated } = useAuth()
         </aside>
       </div>
     </div>
-    
+
     <!-- Content for non-authenticated users -->
     <div v-else>
       <slot />

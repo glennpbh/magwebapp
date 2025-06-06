@@ -1,5 +1,6 @@
-import { queryMultiple } from '../../db/query'
 import type { SalesHeader } from '~/types/sales-header'
+
+import { queryMultiple } from '../../db/query'
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
@@ -14,7 +15,8 @@ export default defineEventHandler(async (event) => {
 
     // Add search filter
     if (search) {
-      whereClause += ' AND (UPPER(SALES_DOCUMENT_NUM) LIKE UPPER(:search) OR UPPER(CUSTOMER_NAME) LIKE UPPER(:search) OR UPPER(CUSTOMER_ACCOUNT) LIKE UPPER(:search))'
+      whereClause +=
+        ' AND (UPPER(SALES_DOCUMENT_NUM) LIKE UPPER(:search) OR UPPER(CUSTOMER_NAME) LIKE UPPER(:search) OR UPPER(CUSTOMER_ACCOUNT) LIKE UPPER(:search))'
       params.search = `%${search}%`
     }
 
@@ -182,7 +184,7 @@ export default defineEventHandler(async (event) => {
     }
   } catch (err) {
     console.error('Sales header lookup error:', err)
-    
+
     throw createError({
       statusCode: 500,
       statusMessage: 'Failed to retrieve sales headers'

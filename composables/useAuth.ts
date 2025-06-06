@@ -35,7 +35,7 @@ export const useAuth = () => {
       if (response.success && response.token && response.user) {
         token.value = response.token
         user.value = response.user
-        
+
         // Redirect to home page on successful login
         await navigateTo('/')
       }
@@ -87,11 +87,11 @@ export const useAuth = () => {
   }
 
   const hasAnyRole = (roles: string[]): boolean => {
-    return roles.some(role => hasRole(role))
+    return roles.some((role) => hasRole(role))
   }
 
   // Auto-check authentication on composable initialization
-  if (process.client && token.value && !user.value) {
+  if (import.meta.client && token.value && !user.value) {
     checkAuth()
   }
 

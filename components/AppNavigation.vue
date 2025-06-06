@@ -13,7 +13,10 @@ const handleLogout = async () => {
         <Icon name="heroicons:user" class="h-6 w-6 text-primary-content" />
       </div>
     </div>
-    <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-52">
+    <ul
+      tabindex="0"
+      class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-52"
+    >
       <li class="menu-title">
         <span>{{ user?.displayName || user?.email }}</span>
       </li>
@@ -35,7 +38,7 @@ const handleLogout = async () => {
       </li>
       <div class="divider my-1"></div>
       <li>
-        <button @click="handleLogout" class="text-error">
+        <button class="text-error" @click="handleLogout">
           <Icon name="heroicons:arrow-right-on-rectangle" class="h-4 w-4" />
           Logout
         </button>

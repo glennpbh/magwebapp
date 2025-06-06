@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken'
+
 import type { LdapUser } from './ldap'
 
 export interface JwtPayload {
@@ -86,6 +87,6 @@ export class JwtService {
   }
 
   hasAnyRole(payload: JwtPayload, requiredRoles: string[]): boolean {
-    return requiredRoles.some(role => payload.groups.includes(role))
+    return requiredRoles.some((role) => payload.groups.includes(role))
   }
 }

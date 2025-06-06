@@ -24,9 +24,9 @@ const allOrders: Order[] = [
     items: 3
   },
   {
-    id: 'ORD-002', 
+    id: 'ORD-002',
     customerName: 'Sarah Johnson',
-    amount: 156.50,
+    amount: 156.5,
     status: 'shipped',
     orderDate: '2024-01-14',
     items: 2
@@ -72,15 +72,15 @@ const filteredOrders = computed(() => {
   // Filter by search query
   if (searchQuery.value) {
     const query = searchQuery.value.toLowerCase()
-    filtered = filtered.filter(order => 
-      order.id.toLowerCase().includes(query) ||
-      order.customerName.toLowerCase().includes(query)
+    filtered = filtered.filter(
+      (order) =>
+        order.id.toLowerCase().includes(query) || order.customerName.toLowerCase().includes(query)
     )
   }
 
   // Filter by status
   if (selectedStatus.value) {
-    filtered = filtered.filter(order => order.status === selectedStatus.value)
+    filtered = filtered.filter((order) => order.status === selectedStatus.value)
   }
 
   // Sort orders
@@ -110,7 +110,7 @@ const getStatusBadgeClass = (status: string) => {
   const classes = {
     pending: 'badge-warning',
     processing: 'badge-info',
-    shipped: 'badge-primary', 
+    shipped: 'badge-primary',
     delivered: 'badge-success',
     cancelled: 'badge-error'
   }
@@ -137,9 +137,7 @@ const formatDate = (dateString: string) => {
   <div class="space-y-6">
     <div class="flex justify-between items-center">
       <h1 class="text-3xl font-bold">Orders</h1>
-      <div class="text-sm text-base-content/70">
-        {{ ordersData.pagination.total }} orders found
-      </div>
+      <div class="text-sm text-base-content/70">{{ ordersData.pagination.total }} orders found</div>
     </div>
 
     <!-- Search and Filter Controls -->
@@ -151,12 +149,12 @@ const formatDate = (dateString: string) => {
             <label class="label">
               <span class="label-text">Search Orders</span>
             </label>
-            <input 
+            <input
               v-model="searchQuery"
-              type="text" 
+              type="text"
               placeholder="Search by order ID or customer name..."
               class="input input-bordered w-full"
-            >
+            />
           </div>
 
           <!-- Status Filter -->
@@ -183,14 +181,14 @@ const formatDate = (dateString: string) => {
                 <option value="amount">Amount</option>
                 <option value="status">Status</option>
               </select>
-              <button 
+              <button
                 class="btn btn-outline btn-square"
                 :title="sortOrder === 'asc' ? 'Sort Descending' : 'Sort Ascending'"
                 @click="sortOrder = sortOrder === 'asc' ? 'desc' : 'asc'"
               >
-                <Icon 
-                  :name="sortOrder === 'asc' ? 'heroicons:arrow-up' : 'heroicons:arrow-down'" 
-                  class="h-4 w-4" 
+                <Icon
+                  :name="sortOrder === 'asc' ? 'heroicons:arrow-up' : 'heroicons:arrow-down'"
+                  class="h-4 w-4"
                 />
               </button>
             </div>
@@ -231,18 +229,26 @@ const formatDate = (dateString: string) => {
                 <td>
                   <div class="flex flex-col">
                     <span class="font-mono font-medium">{{ order.salesDocumentNum }}</span>
-                    <span class="text-xs text-base-content/50">{{ getOrderTypeLabel(order.orderType) }}</span>
+                    <span class="text-xs text-base-content/50">
+                      {{ getOrderTypeLabel(order.orderType) }}
+                    </span>
                   </div>
                 </td>
                 <td>
                   <div class="flex items-center space-x-3">
                     <div class="avatar placeholder">
                       <div class="bg-neutral text-neutral-content rounded-full w-8">
-                        <span class="text-xs">{{ 
-                          order.customerName 
-                            ? order.customerName.split(' ').map(n => n[0]).join('').substring(0, 2) 
-                            : '??' 
-                        }}</span>
+                        <span class="text-xs">
+                          {{
+                            order.customerName
+                              ? order.customerName
+                                  .split(' ')
+                                  .map((n) => n[0])
+                                  .join('')
+                                  .substring(0, 2)
+                              : '??'
+                          }}
+                        </span>
                       </div>
                     </div>
                     <div>
@@ -271,7 +277,11 @@ const formatDate = (dateString: string) => {
                 </td>
                 <td>
                   <div class="flex gap-1">
-                    <NuxtLink :to="`/orders/${order.salesDocumentNum}`" class="btn btn-ghost btn-xs" title="View Order">
+                    <NuxtLink
+                      :to="`/orders/${order.salesDocumentNum}`"
+                      class="btn btn-ghost btn-xs"
+                      title="View Order"
+                    >
                       <Icon name="heroicons:eye" class="h-4 w-4" />
                     </NuxtLink>
                     <button class="btn btn-ghost btn-xs" title="Edit Order">

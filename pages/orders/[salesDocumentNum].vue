@@ -11,13 +11,13 @@ const err = ref<string | null>(null)
 const fetchOrder = async () => {
   isLoading.value = true
   err.value = null
-  
+
   try {
     const response = await $fetch<{
       success: boolean
       data: SalesHeader
     }>(`/api/sales-header/${salesDocumentNum}`)
-    
+
     if (response.success) {
       order.value = response.data
     }
@@ -35,11 +35,11 @@ onMounted(() => {
 
 const getStatusBadgeClass = (status?: number) => {
   const classes = {
-    0: 'badge-warning',   // Incomplete
-    1: 'badge-info',      // Held
-    2: 'badge-success',   // Complete
-    3: 'badge-error',     // Cancelled
-    4: 'badge-neutral'    // Provisional
+    0: 'badge-warning', // Incomplete
+    1: 'badge-info', // Held
+    2: 'badge-success', // Complete
+    3: 'badge-error', // Cancelled
+    4: 'badge-neutral' // Provisional
   }
   return classes[status as keyof typeof classes] || 'badge-neutral'
 }
@@ -79,11 +79,11 @@ const formatDate = (dateNum?: number) => {
   // Convert from YYYYMMDD format to Date
   const dateStr = dateNum.toString()
   if (dateStr.length !== 8) return 'N/A'
-  
+
   const year = parseInt(dateStr.substring(0, 4))
   const month = parseInt(dateStr.substring(4, 6)) - 1 // Month is 0-indexed
   const day = parseInt(dateStr.substring(6, 8))
-  
+
   const date = new Date(year, month, day)
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
@@ -131,7 +131,7 @@ const formatDate = (dateNum?: number) => {
             <Icon name="heroicons:document-text" class="h-5 w-5" />
             Basic Information
           </h2>
-          
+
           <div class="space-y-4">
             <div class="grid grid-cols-2 gap-4">
               <div>
@@ -147,7 +147,7 @@ const formatDate = (dateNum?: number) => {
                 <span>{{ getOrderTypeLabel(order.orderType) }}</span>
               </div>
             </div>
-            
+
             <div class="grid grid-cols-2 gap-4">
               <div>
                 <label class="label">
@@ -164,14 +164,14 @@ const formatDate = (dateNum?: number) => {
                 <span>{{ formatDate(order.orderDate) }}</span>
               </div>
             </div>
-            
+
             <div v-if="order.reference">
               <label class="label">
                 <span class="label-text font-medium">Reference</span>
               </label>
               <span>{{ order.reference }}</span>
             </div>
-            
+
             <div v-if="order.username">
               <label class="label">
                 <span class="label-text font-medium">Created By</span>
@@ -189,7 +189,7 @@ const formatDate = (dateNum?: number) => {
             <Icon name="heroicons:user" class="h-5 w-5" />
             Customer Information
           </h2>
-          
+
           <div class="space-y-4">
             <div>
               <label class="label">
@@ -197,25 +197,29 @@ const formatDate = (dateNum?: number) => {
               </label>
               <span class="text-lg">{{ order.customerName || 'Unknown Customer' }}</span>
             </div>
-            
+
             <div v-if="order.customerAccount">
               <label class="label">
                 <span class="label-text font-medium">Customer Account</span>
               </label>
               <span class="font-mono">{{ order.customerAccount }}</span>
             </div>
-            
+
             <div v-if="order.contactName">
               <label class="label">
                 <span class="label-text font-medium">Contact</span>
               </label>
               <div class="space-y-1">
                 <div>{{ order.contactName }}</div>
-                <div v-if="order.jobTitle" class="text-sm text-base-content/70">{{ order.jobTitle }}</div>
-                <div v-if="order.department" class="text-sm text-base-content/70">{{ order.department }}</div>
+                <div v-if="order.jobTitle" class="text-sm text-base-content/70">
+                  {{ order.jobTitle }}
+                </div>
+                <div v-if="order.department" class="text-sm text-base-content/70">
+                  {{ order.department }}
+                </div>
               </div>
             </div>
-            
+
             <div v-if="order.telephone || order.email">
               <label class="label">
                 <span class="label-text font-medium">Contact Information</span>
@@ -243,14 +247,16 @@ const formatDate = (dateNum?: number) => {
             <Icon name="heroicons:banknotes" class="h-5 w-5" />
             Financial Information
           </h2>
-          
+
           <div class="space-y-4">
             <div class="grid grid-cols-2 gap-4">
               <div>
                 <label class="label">
                   <span class="label-text font-medium">Order Value</span>
                 </label>
-                <span class="text-2xl font-bold text-success">{{ formatCurrency(order.orderValue) }}</span>
+                <span class="text-2xl font-bold text-success">
+                  {{ formatCurrency(order.orderValue) }}
+                </span>
               </div>
               <div>
                 <label class="label">
@@ -259,7 +265,7 @@ const formatDate = (dateNum?: number) => {
                 <span>{{ order.currencyCode || 'USD' }}</span>
               </div>
             </div>
-            
+
             <div v-if="order.vatValue" class="grid grid-cols-2 gap-4">
               <div>
                 <label class="label">
@@ -274,7 +280,7 @@ const formatDate = (dateNum?: number) => {
                 <span>{{ formatCurrency(order.orderCost) }}</span>
               </div>
             </div>
-            
+
             <div v-if="order.paymentTerm">
               <label class="label">
                 <span class="label-text font-medium">Payment Terms</span>
@@ -292,7 +298,7 @@ const formatDate = (dateNum?: number) => {
             <Icon name="heroicons:truck" class="h-5 w-5" />
             Delivery Information
           </h2>
-          
+
           <div class="space-y-4">
             <div v-if="order.address1 || order.address2 || order.address3">
               <label class="label">
@@ -310,20 +316,22 @@ const formatDate = (dateNum?: number) => {
                 </div>
               </div>
             </div>
-            
+
             <div v-if="order.deliveryName">
               <label class="label">
                 <span class="label-text font-medium">Delivery Name</span>
               </label>
               <span>{{ order.deliveryName }}</span>
             </div>
-            
+
             <div class="grid grid-cols-2 gap-4">
               <div v-if="order.totalDelivery !== undefined">
                 <label class="label">
                   <span class="label-text font-medium">Delivery Type</span>
                 </label>
-                <span>{{ order.totalDelivery === 1 ? 'Total Delivery Only' : 'Part Shipment Allowed' }}</span>
+                <span>
+                  {{ order.totalDelivery === 1 ? 'Total Delivery Only' : 'Part Shipment Allowed' }}
+                </span>
               </div>
               <div v-if="order.completionDate">
                 <label class="label">

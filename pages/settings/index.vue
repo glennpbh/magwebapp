@@ -32,7 +32,12 @@ useSeoMeta({
               <label class="label">
                 <span class="label-text">Email</span>
               </label>
-              <input type="email" class="input input-bordered" placeholder="your.email@company.com" readonly />
+              <input
+                type="email"
+                class="input input-bordered"
+                placeholder="your.email@company.com"
+                readonly
+              />
             </div>
             <button class="btn btn-primary">Save Changes</button>
           </div>

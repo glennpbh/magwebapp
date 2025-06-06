@@ -23,14 +23,19 @@ useSeoMeta({
       <div class="card-body">
         <h2 class="card-title">Customer Management</h2>
         <p class="text-base-content/70">
-          Search and manage customer accounts, view customer details, and perform customer-related operations.
+          Search and manage customer accounts, view customer details, and perform customer-related
+          operations.
         </p>
-        
+
         <div class="form-control w-full max-w-xs">
           <label class="label">
             <span class="label-text">Search customers</span>
           </label>
-          <input type="text" placeholder="Enter customer account or name" class="input input-bordered w-full max-w-xs" />
+          <input
+            type="text"
+            placeholder="Enter customer account or name"
+            class="input input-bordered w-full max-w-xs"
+          />
         </div>
 
         <div class="alert alert-info mt-4">
