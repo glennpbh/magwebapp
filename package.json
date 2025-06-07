@@ -41,6 +41,7 @@
     "ldapjs": "^3.0.7",
     "nuxt": "^3.17.5",
     "oracledb": "^6.8.0",
+    "pg": "^8.16.0",
     "pg-copy-streams": "^7.0.0",
     "postgres": "^3.4.7",
     "tailwindcss": "^4.1.8",

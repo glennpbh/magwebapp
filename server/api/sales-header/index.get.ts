@@ -1,4 +1,5 @@
 import type { SalesHeader } from '~/types/sales-header'
+import type { BindParameters } from 'oracledb'
 
 import { queryMultiple } from '../../db/query'
 
@@ -11,7 +12,7 @@ export default defineEventHandler(async (event) => {
 
   try {
     let whereClause = '1=1'
-    const params: Record<string, unknown> = {}
+    const params: BindParameters = {}
 
     // Add search filter
     if (search) {
