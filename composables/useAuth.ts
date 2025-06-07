@@ -16,7 +16,7 @@ export const useAuth = () => {
   const token = useCookie<string | null>('auth.token', {
     default: () => null,
     maxAge: 60 * 60 * 24, // 24 hours
-    secure: true,
+    secure: process.env.NODE_ENV === 'production',
     sameSite: 'strict'
   })
 
@@ -56,8 +56,9 @@ export const useAuth = () => {
     await navigateTo('/login')
   }
 
-  const checkAuth = async () => {
+  const checkAuth = async (): Promise<boolean> => {
     if (!token.value) {
+      user.value = null
       return false
     }
 
@@ -72,12 +73,14 @@ export const useAuth = () => {
         user.value = response.user
         return true
       } else {
-        await logout()
+        token.value = null
+        user.value = null
         return false
       }
     } catch (err) {
       console.error('Auth check failed:', err)
-      await logout()
+      token.value = null
+      user.value = null
       return false
     }
   }
@@ -90,9 +93,10 @@ export const useAuth = () => {
     return roles.some((role) => hasRole(role))
   }
 
-  // Auto-check authentication on composable initialization
+  // Initialize auth state on client side
   if (import.meta.client && token.value && !user.value) {
-    checkAuth()
+    // Don't auto-check here to avoid conflicts with middleware
+    // The middleware will handle the auth check
   }
 
   return {

@@ -1,12 +1,18 @@
 <script setup lang="ts">
 import type { SalesHeader } from '~/types/sales-header'
 
+definePageMeta({
+  middleware: 'auth'
+})
+
 const route = useRoute()
 const salesDocumentNum = route.params.salesDocumentNum as string
 
 const order = ref<SalesHeader | null>(null)
 const isLoading = ref(true)
 const err = ref<string | null>(null)
+
+const { token } = useAuth()
 
 const fetchOrder = async () => {
   isLoading.value = true
@@ -16,7 +22,11 @@ const fetchOrder = async () => {
     const response = await $fetch<{
       success: boolean
       data: SalesHeader
-    }>(`/api/sales-header/${salesDocumentNum}`)
+    }>(`/api/sales-header/${salesDocumentNum}`, {
+      headers: {
+        ...(token.value ? { Authorization: `Bearer ${token.value}` } : {})
+      }
+    })
 
     if (response.success) {
       order.value = response.data
