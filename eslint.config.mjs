@@ -8,7 +8,7 @@ export default withNuxt(
   // Prettier integration
   {
     plugins: {
-      prettier: eslintPluginPrettier
+      prettier: eslintPluginPrettier,
     },
     rules: {
       // Enable Prettier as ESLint rule
@@ -43,9 +43,9 @@ export default withNuxt(
       // 'operator-linebreak': 'off',
       // curly: 'off',
       // 'nonblock-statement-body-position': 'off'
-    }
+    },
   },
 
   // Apply eslint-config-prettier to disable conflicting rules
-  eslintConfigPrettier
+  eslintConfigPrettier,
 )

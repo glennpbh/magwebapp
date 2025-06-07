@@ -22,7 +22,7 @@ export interface LdapConfig {
 }
 
 export class LdapService {
-  private configs: LdapConfig[]
+  private readonly configs: LdapConfig[]
 
   constructor() {
     this.configs = this.parseConfigs()

@@ -22,42 +22,6 @@ services:
       timeout: 5s
       retries: 5
 
-  # Redis for BullMQ
-  redis:
-    image: redis:7-alpine
-    container_name: magwebapp-redis
-    restart: unless-stopped
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-    networks:
-      - magwebapp-network
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 3s
-      retries: 5
-    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
-
-  # BullMQ Dashboard (Redis-based queue monitoring)
-  bullmq-board:
-    image: deadly0/bull-board
-    container_name: magwebapp-bullmq-board
-    restart: unless-stopped
-    ports:
-      - "3001:3000"
-    environment:
-      REDIS_HOST: redis
-      REDIS_PORT: 6379
-      REDIS_PASSWORD: ""
-      REDIS_USE_TLS: "false"
-    depends_on:
-      redis:
-        condition: service_healthy
-    networks:
-      - magwebapp-network
-
   # pgAdmin for PostgreSQL management
   pgadmin:
     image: dpage/pgadmin4:latest
@@ -78,28 +42,9 @@ services:
     networks:
       - magwebapp-network
 
-  # Redis Commander (Alternative Redis GUI)
-  redis-commander:
-    image: rediscommander/redis-commander:latest
-    container_name: magwebapp-redis-commander
-    restart: unless-stopped
-    environment:
-      REDIS_HOSTS: "local:redis:6379"
-      HTTP_USER: admin
-      HTTP_PASSWORD: admin
-    ports:
-      - "8081:8081"
-    depends_on:
-      redis:
-        condition: service_healthy
-    networks:
-      - magwebapp-network
-
 volumes:
   postgres_data:
     name: magwebapp_postgres_data
-  redis_data:
-    name: magwebapp_redis_data
   pgadmin_data:
     name: magwebapp_pgadmin_data
 

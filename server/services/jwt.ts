@@ -1,4 +1,6 @@
+import type { Secret, SignOptions } from 'jsonwebtoken'
 import jwt from 'jsonwebtoken'
+import type { StringValue } from 'ms'
 
 import type { LdapUser } from './ldap'
 
@@ -12,8 +14,8 @@ export interface JwtPayload {
 }
 
 export interface JwtConfig {
-  secret: string
-  expiresIn: string
+  secret: Secret
+  expiresIn: StringValue
 }
 
 export class JwtService {
@@ -27,7 +29,7 @@ export class JwtService {
       throw new Error('JWT_SECRET environment variable is required')
     }
 
-    this.config = { secret, expiresIn }
+    this.config = { secret, expiresIn: expiresIn as StringValue }
   }
 
   generateToken(user: LdapUser): string {
@@ -35,19 +37,21 @@ export class JwtService {
       sub: user.email,
       email: user.email,
       displayName: user.displayName,
-      groups: user.memberOf
+      groups: user.memberOf,
     }
 
-    return jwt.sign(payload, this.config.secret, {
+    const signOptions: SignOptions = {
       expiresIn: this.config.expiresIn,
-      issuer: 'magwebapp'
-    })
+      issuer: 'magwebapp',
+    }
+
+    return jwt.sign(payload, this.config.secret, signOptions) as string
   }
 
   verifyToken(token: string): JwtPayload {
     try {
       const decoded = jwt.verify(token, this.config.secret, {
-        issuer: 'magwebapp'
+        issuer: 'magwebapp',
       })
 
       if (typeof decoded === 'string') {
